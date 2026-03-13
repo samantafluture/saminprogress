@@ -11,12 +11,12 @@
   - [x] Enable TypeScript strict mode
   - [x] Create CLAUDE.md and README.md
   - [x] Set up content collection schema and blog layouts
-- [ ] Initialize git repo `[S]` #setup
-- [ ] Configure Nginx on VPS for `blog.samantafluture.com` `[M]` #devops
-  - [ ] Create Nginx server block for subdomain
-  - [ ] Run Certbot for SSL certificate
-  - [ ] Create `/var/www/saminprogress/` directory
-  - [ ] Test with placeholder index.html
+- [x] Initialize git repo + GitHub remote (main branch) `[S]` #setup ✅ 2026-03-13
+- [x] Configure Nginx on VPS for `blog.samantafluture.com` `[M]` #devops ✅ 2026-03-13
+  - [x] Create Nginx server block for subdomain
+  - [x] Run Certbot for SSL certificate
+  - [x] Create `saminprogress_web` Docker volume + mount in infra-nginx
+  - [x] Test full deploy — site live at https://blog.samantafluture.com
 
 ### P1 — Should do this week
 - [ ] Set up deploy pipeline (local → VPS) `[M]` #devops

@@ -88,11 +88,10 @@ draft: false
 ## 8. Deploy
 
 ```bash
-pnpm build              # Build static site to dist/
-rsync -avz --delete dist/ sam@vps:/var/www/saminprogress/
+bash scripts/deploy.sh   # Build + upload + copy into Docker volume
 ```
 
-Nginx serves from `/var/www/saminprogress/`.
+Nginx serves from Docker volume `saminprogress_web` mounted at `/usr/share/nginx/saminprogress/`.
 
 ---
 
