@@ -19,6 +19,12 @@
     "astro": "^6.0.4"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp"]
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
+  "volta": {
+    "node": "22.22.1"
   }
 }
