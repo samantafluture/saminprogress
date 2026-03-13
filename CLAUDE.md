@@ -97,8 +97,14 @@ Nginx serves from Docker volume `saminprogress_web` mounted at `/usr/share/nginx
 
 ## 9. Obsidian Sync
 
-Blog posts folder (`src/content/blog/`) is shared via Syncthing so posts
-can be drafted on Android via Obsidian and appear in the Astro project.
+Blog drafts are written in the Obsidian vault at:
+`/home/samantafluture/Obsidian/Cherry-Tasks/blog-drafts/`
+
+This folder syncs across all devices via Syncthing (PC, VPS, Android).
+Drafts are NOT auto-published — the `/publish` skill copies approved drafts
+from `blog-drafts/` into `src/content/blog/`, builds, and deploys.
+
+Published drafts get renamed with a `.published` suffix in the Obsidian folder.
 
 ---
 
