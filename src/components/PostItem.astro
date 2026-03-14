@@ -43,18 +43,17 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .post-item {
     padding-bottom: 1.75rem;
     margin-bottom: 1.75rem;
-    border-bottom: 1px solid var(--base2);
+    border-bottom: 1px solid var(--border);
   }
 
   .post-item:last-child {
     border-bottom: none;
   }
 
-  /* Meta line */
   .post-meta {
     font-family: var(--font-mono);
     font-size: 11px;
-    color: var(--base1);
+    color: var(--fg-faint);
     margin-bottom: 4px;
   }
 
@@ -62,7 +61,6 @@ const formattedDate = date.toLocaleDateString('en-US', {
     color: var(--cyan);
   }
 
-  /* Title */
   .post-title {
     font-family: var(--font-mono);
     font-size: 19px;
@@ -72,7 +70,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .post-title a {
-    color: var(--base01);
+    color: var(--fg-strong);
     text-decoration: none;
     word-spacing: normal;
   }
@@ -85,7 +83,6 @@ const formattedDate = date.toLocaleDateString('en-US', {
     color: var(--yellow);
   }
 
-  /* Tags */
   .post-tags {
     display: flex;
     flex-wrap: wrap;
@@ -105,21 +102,19 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .tag:hover {
-    color: var(--base01);
+    color: var(--fg-strong);
   }
 
-  /* Excerpt */
   .post-excerpt {
     font-family: var(--font-serif);
     font-size: 15px;
-    color: var(--base00);
+    color: var(--fg);
     line-height: 1.55;
-    border-left: 2px solid var(--base2);
+    border-left: 2px solid var(--border);
     padding-left: 12px;
     margin-bottom: 14px;
   }
 
-  /* Read more */
   .read-more {
     display: inline-block;
     font-family: var(--font-mono);
@@ -135,6 +130,6 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
   .read-more:hover {
     background: var(--blue);
-    color: var(--base3);
+    color: var(--bg);
   }
 </style>

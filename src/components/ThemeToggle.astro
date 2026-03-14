@@ -1,0 +1,63 @@
+---
+---
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <span class="toggle-icon light-icon">&#x2600;</span>
+  <span class="toggle-icon dark-icon">&#x263D;</span>
+</button>
+
+<style>
+  .theme-toggle {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    color: var(--fg-muted);
+    line-height: 1;
+  }
+
+  .theme-toggle:hover {
+    color: var(--yellow);
+  }
+
+  /* Show sun in dark mode, moon in light mode */
+  .light-icon { display: none; }
+  .dark-icon { display: inline; }
+
+  :global([data-theme="dark"]) .light-icon { display: inline; }
+  :global([data-theme="dark"]) .dark-icon { display: none; }
+</style>
+
+<script>
+  function initTheme() {
+    const stored = localStorage.getItem('theme');
+    if (stored) {
+      document.documentElement.setAttribute('data-theme', stored);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }
+
+  // Run immediately to prevent flash
+  initTheme();
+
+  document.addEventListener('astro:page-load', () => {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+
+      if (next === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      localStorage.setItem('theme', next);
+    });
+  });
+</script>

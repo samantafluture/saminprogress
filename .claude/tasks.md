@@ -7,7 +7,14 @@
 
 ### P0 — Must do now
 
-All P0 tasks completed.
+- [x] Implement dark theme with toggle `[M]` #design ✅ 2026-03-14
+  - [x] Semantic CSS variables (--bg, --fg, --fg-strong, --fg-muted, --fg-faint, --border)
+  - [x] Solarized Dark palette via [data-theme="dark"]
+  - [x] All components updated to use semantic variables
+  - [x] ThemeToggle component (sun/moon icons in header)
+  - [x] localStorage persistence + prefers-color-scheme respect
+  - [x] Inline script in <head> prevents flash of wrong theme
+  - [x] Built and deployed
 
 ### P1 — Should do this week
 - [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet

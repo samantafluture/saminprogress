@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+
 const currentPath = Astro.url.pathname;
 
 function isActive(href: string): boolean {
@@ -23,13 +25,16 @@ const navLinks = [
     </div>
   </div>
   <div class="header-content">
-    <a href="/" class="site-name-link">
-      <div class="site-name-row">
-        <span class="prompt-symbol">~$</span>
-        <span class="site-name">saminprogress</span>
-        <span class="cursor" aria-hidden="true"></span>
-      </div>
-    </a>
+    <div class="site-name-row-wrapper">
+      <a href="/" class="site-name-link">
+        <div class="site-name-row">
+          <span class="prompt-symbol">~$</span>
+          <span class="site-name">saminprogress</span>
+          <span class="cursor" aria-hidden="true"></span>
+        </div>
+      </a>
+      <ThemeToggle />
+    </div>
     <div class="tagline">
       // personal journal &middot; lead dev life &middot; things i'm building
     </div>
@@ -45,12 +50,12 @@ const navLinks = [
 
 <style>
   .site-header {
-    background: var(--base02);
+    background: var(--bg-header);
   }
 
   /* Prompt bar — full width background, centered content */
   .prompt-bar {
-    background: var(--base01);
+    background: var(--fg-strong);
   }
 
   .prompt-bar-inner {
@@ -80,8 +85,8 @@ const navLinks = [
   }
 
   .segment-command {
-    background: var(--base01);
-    color: var(--base3);
+    background: var(--fg-strong);
+    color: var(--bg);
     font-style: italic;
     font-weight: 400;
     flex: 1;
@@ -92,7 +97,7 @@ const navLinks = [
 
   .segment-location {
     background: var(--blue);
-    color: var(--base3);
+    color: var(--bg);
     margin-left: auto;
   }
 
@@ -103,7 +108,13 @@ const navLinks = [
     padding: 0 2rem;
   }
 
-  /* Site name row */
+  /* Site name row with toggle */
+  .site-name-row-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .site-name-link {
     display: block;
     cursor: pointer;
@@ -143,7 +154,7 @@ const navLinks = [
     font-family: var(--font-serif);
     font-size: 13px;
     font-style: italic;
-    color: var(--base0);
+    color: var(--fg-muted);
     padding: 0 0 8px;
   }
 
@@ -159,8 +170,8 @@ const navLinks = [
     font-size: 12px;
     font-weight: 400;
     padding: 4px 14px;
-    background: var(--base01);
-    color: var(--base3);
+    background: var(--fg-strong);
+    color: var(--bg);
     border: none;
     border-radius: 0;
     text-decoration: none;

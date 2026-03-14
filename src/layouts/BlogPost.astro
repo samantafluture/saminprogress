@@ -66,7 +66,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .breadcrumbs {
     font-family: var(--font-mono);
     font-size: 11px;
-    color: var(--base1);
+    color: var(--fg-faint);
     margin-bottom: 1.5rem;
   }
 
@@ -81,12 +81,12 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .breadcrumb-sep {
-    color: var(--base1);
+    color: var(--fg-faint);
     margin: 0 4px;
   }
 
   .breadcrumb-current {
-    color: var(--base00);
+    color: var(--fg);
   }
 
   /* Header */
@@ -97,7 +97,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .post-meta {
     font-family: var(--font-mono);
     font-size: 11px;
-    color: var(--base1);
+    color: var(--fg-faint);
     margin-bottom: 6px;
   }
 
@@ -109,7 +109,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
     font-family: var(--font-mono);
     font-size: 22px;
     font-weight: 700;
-    color: var(--base01);
+    color: var(--fg-strong);
     line-height: 1.35;
     margin-bottom: 8px;
   }
@@ -122,7 +122,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .post-content {
     font-family: var(--font-serif);
     font-size: 17px;
-    color: var(--base00);
+    color: var(--fg);
     line-height: 1.65;
   }
 
@@ -140,7 +140,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
     font-family: var(--font-mono);
     font-size: 17px;
     font-weight: 500;
-    color: var(--base01);
+    color: var(--fg-strong);
     margin: 2rem 0 0.75rem;
   }
 
@@ -148,7 +148,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
     font-family: var(--font-mono);
     font-size: 15px;
     font-weight: 500;
-    color: var(--base01);
+    color: var(--fg-strong);
     margin: 1.5rem 0 0.5rem;
   }
 
@@ -167,9 +167,9 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .post-content :global(blockquote) {
-    border-left: 2px solid var(--base2);
+    border-left: 2px solid var(--border);
     padding-left: 12px;
-    color: var(--base0);
+    color: var(--fg-muted);
     font-style: italic;
     margin: 1rem 0;
   }
@@ -177,13 +177,13 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .post-content :global(code) {
     font-family: var(--font-mono);
     font-size: 14px;
-    background: var(--base2);
+    background: var(--border);
     padding: 2px 5px;
   }
 
   .post-content :global(pre) {
-    background: var(--base02);
-    color: var(--base3);
+    background: var(--bg-header);
+    color: var(--bg);
     padding: 1rem;
     overflow-x: auto;
     margin: 1rem 0;
@@ -215,7 +215,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
   .post-content :global(hr) {
     border: none;
-    border-top: 1px solid var(--base2);
+    border-top: 1px solid var(--border);
     margin: 2rem 0;
   }
 
@@ -227,7 +227,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .post-footer {
     margin-top: 2.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--base2);
+    border-top: 1px solid var(--border);
   }
 
   .post-tags {
@@ -248,7 +248,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .tag:hover {
-    color: var(--base01);
+    color: var(--fg-strong);
   }
 
   /* Back link */
