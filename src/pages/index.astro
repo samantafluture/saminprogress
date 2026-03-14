@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PostItem from '../components/PostItem.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
@@ -8,20 +9,35 @@ const posts = (await getCollection('blog'))
 ---
 
 <BaseLayout title="saminprogress">
-  <h1>saminprogress</h1>
-  <p>a personal blog by sam</p>
-  <section>
-    <h2>latest posts</h2>
-    <ul>
-      {posts.map((post) => (
-        <li>
-          <time datetime={post.data.date.toISOString()}>
-            {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-          </time>
-          {' — '}
-          <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-        </li>
-      ))}
-    </ul>
+  <section class="post-list">
+    <div class="section-label">
+      <span class="label-prefix">$ ls </span><span class="label-path">posts/</span>
+    </div>
+    {posts.map((post) => (
+      <PostItem
+        title={post.data.title}
+        date={post.data.date}
+        description={post.data.description}
+        tags={post.data.tags}
+        slug={post.id}
+      />
+    ))}
   </section>
 </BaseLayout>
+
+<style>
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-prefix {
+    color: var(--green);
+  }
+
+  .label-path {
+    color: var(--base1);
+  }
+</style>

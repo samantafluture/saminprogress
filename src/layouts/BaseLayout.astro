@@ -1,4 +1,8 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -17,17 +21,10 @@ const { title, description = 'saminprogress — a personal blog' } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/">saminprogress</a>
-        <a href="/blog">blog</a>
-      </nav>
-    </header>
+    <Header />
     <main>
       <slot />
     </main>
-    <footer>
-      <p>&copy; {new Date().getFullYear()} sam</p>
-    </footer>
+    <Footer />
   </body>
 </html>

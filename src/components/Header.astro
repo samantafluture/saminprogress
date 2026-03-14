@@ -1,0 +1,161 @@
+---
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/blog') {
+    return currentPath === '/blog' || currentPath === '/blog/' || currentPath.startsWith('/blog/');
+  }
+  return currentPath === href || currentPath === href + '/';
+}
+
+const navLinks = [
+  { href: '/blog', label: 'writing' },
+];
+---
+
+<header class="site-header">
+  <div class="prompt-bar">
+    <span class="segment segment-user">sam@progress</span>
+    <span class="segment segment-branch">&#9014; dev</span>
+    <span class="segment segment-command">cat ~/thoughts/all.md | grep -v overthinking | sort -r</span>
+    <span class="segment segment-location">&#x1F4CD; montreal</span>
+  </div>
+  <div class="site-name-row">
+    <span class="prompt-symbol">~$</span>
+    <span class="site-name">saminprogress</span>
+    <span class="cursor" aria-hidden="true"></span>
+  </div>
+  <div class="tagline">
+    // personal journal &middot; lead dev life &middot; things i'm building
+  </div>
+  <nav class="main-nav">
+    {navLinks.map((link) => (
+      <a href={link.href} class:list={['nav-link', { active: isActive(link.href) }]}>
+        <span class="nav-prefix">./</span>{link.label}
+      </a>
+    ))}
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    background: var(--base02);
+  }
+
+  /* Prompt bar */
+  .prompt-bar {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    overflow-x: auto;
+  }
+
+  .segment {
+    padding: 10px 16px;
+    white-space: nowrap;
+  }
+
+  .segment-user {
+    background: var(--green);
+    color: var(--base03);
+  }
+
+  .segment-branch {
+    background: var(--yellow);
+    color: var(--base03);
+  }
+
+  .segment-command {
+    background: var(--base01);
+    color: var(--base3);
+    font-style: italic;
+    font-weight: 400;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .segment-location {
+    background: var(--blue);
+    color: var(--base3);
+    margin-left: auto;
+  }
+
+  /* Site name row */
+  .site-name-row {
+    padding: 14px 16px 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .prompt-symbol {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--cyan);
+  }
+
+  .site-name {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--base3);
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background: var(--yellow);
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Tagline */
+  .tagline {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--base0);
+    padding: 0 16px 8px;
+  }
+
+  /* Navigation */
+  .main-nav {
+    padding: 8px 16px 12px;
+    display: flex;
+    gap: 0;
+  }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 14px;
+    background: var(--base01);
+    color: var(--base3);
+    border: none;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .nav-link:hover {
+    background: var(--blue);
+  }
+
+  .nav-link.active {
+    background: var(--yellow);
+    color: var(--base03);
+  }
+
+  .nav-link.active .nav-prefix {
+    color: var(--base03);
+  }
+
+  .nav-prefix {
+    color: var(--cyan);
+  }
+</style>
