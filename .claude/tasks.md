@@ -19,26 +19,23 @@ All P0 tasks completed.
   > .tech TLD registry hasn't delegated NS records yet. Can take up to 24-48h for new domains. Retry Certbot later.
 
 ### P2 — Nice to have
-- [ ] Add VPS sync script entry for saminprogress `[S]` #devops
-  - [ ] Update `sync-tasks-to-repos.sh` PROJECT_MAP on VPS
-  - [ ] Update `sync-tasks-from-repos.sh` PROJECT_MAP on VPS
+- [x] Add VPS sync script entry for saminprogress `[S]` #devops ✅ 2026-03-14
+  - [x] Updated `sync-tasks-to-repos.sh` PROJECT_MAP on VPS
+  - [x] Updated `sync-tasks-from-repos.sh` PROJECT_MAP on VPS
+  - [x] Tested — sync works
 - [ ] Search and register domain `saminprogress.dev` `[S]` #manual
   > ⚠️ Manual step — check availability, register via preferred registrar, update DNS to Hostinger VPS IP
 - [ ] Switch Nginx config from `blog.samantafluture.com` to `saminprogress.dev` `[S]` #devops
   > Blocked until domain is registered
 - [ ] Remove `blog.samantafluture.com` and redirect to `saminprogress.tech` `[S]` #devops
   > Once saminprogress.tech is fully working with SSL, update Nginx to 301 redirect blog.samantafluture.com → saminprogress.tech, then remove the old DNS record
-- [/] Fix GitHub Action deploy `[M]` #devops ⏳ in-progress
-  > Root cause: Hostinger blocks SSH from cloud/datacenter IPs (GitHub Actions, Claude Code)
-  > Solution: Replaced SSH-based deploy with webhook-based deploy
-  > Agent: Created webhook server, systemd service, Nginx route, updated GitHub Action (2026-03-14)
-  - [x] Created `scripts/webhook-server.js` — Node.js HTTP server with secret token auth
-  - [x] Created `scripts/saminprogress-webhook.service` — systemd unit file
-  - [x] Updated `nginx/saminprogress.conf` — added `/webhook/deploy` proxy route
-  - [x] Updated `.github/workflows/deploy.yml` — uses `curl` instead of SSH
-  - [x] Created `scripts/setup-webhook.sh` — one-command VPS setup
-  - [ ] Run `bash scripts/setup-webhook.sh` on VPS (manual step)
-  - [ ] Add `WEBHOOK_SECRET` to GitHub repo secrets
+- [x] Fix GitHub Action deploy `[M]` #devops ✅ 2026-03-14
+  > Replaced SSH with webhook-based deploy (unix socket)
+  - [x] Webhook server on VPS (user systemd service, unix socket)
+  - [x] Nginx proxies /webhook/deploy to unix socket
+  - [x] GitHub Action triggers webhook via curl
+  - [x] WEBHOOK_SECRET set on GitHub repo
+  - [x] Full CI/CD tested — push to main auto-deploys
 
 ## Blocked
 
