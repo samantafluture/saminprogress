@@ -29,7 +29,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   {tags.length > 0 && (
     <div class="post-tags">
       {tags.map((tag) => (
-        <span class="tag">#{tag}</span>
+        <a href={`/blog/tag/${tag}/`} class="tag">#{tag}</a>
       ))}
     </div>
   )}
@@ -66,14 +66,15 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .post-title {
     font-family: var(--font-mono);
     font-size: 19px;
-    font-weight: 500;
-    line-height: 1.25;
+    font-weight: 700;
+    line-height: 1.35;
     margin-bottom: 6px;
   }
 
   .post-title a {
     color: var(--base01);
     text-decoration: none;
+    word-spacing: normal;
   }
 
   .post-title a:hover {
@@ -87,6 +88,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   /* Tags */
   .post-tags {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     margin-bottom: 10px;
   }
@@ -99,7 +101,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
     color: var(--cyan);
     text-decoration: underline;
     text-underline-offset: 3px;
-    cursor: default;
+    cursor: pointer;
   }
 
   .tag:hover {

@@ -15,26 +15,32 @@ const navLinks = [
 
 <header class="site-header">
   <div class="prompt-bar">
-    <span class="segment segment-user">sam@progress</span>
-    <span class="segment segment-branch">&#9014; dev</span>
-    <span class="segment segment-command">cat ~/thoughts/all.md | grep -v overthinking | sort -r</span>
-    <span class="segment segment-location">&#x1F4CD; montreal</span>
+    <div class="prompt-bar-inner">
+      <span class="segment segment-user">sam@progress</span>
+      <span class="segment segment-branch">&#x1F680; dev</span>
+      <span class="segment segment-command">cat ~/thoughts/all.md | grep -v overthinking | sort -r</span>
+      <span class="segment segment-location">&#x1F4CC; montreal</span>
+    </div>
   </div>
-  <div class="site-name-row">
-    <span class="prompt-symbol">~$</span>
-    <span class="site-name">saminprogress</span>
-    <span class="cursor" aria-hidden="true"></span>
+  <div class="header-content">
+    <a href="/" class="site-name-link">
+      <div class="site-name-row">
+        <span class="prompt-symbol">~$</span>
+        <span class="site-name">saminprogress</span>
+        <span class="cursor" aria-hidden="true"></span>
+      </div>
+    </a>
+    <div class="tagline">
+      // personal journal &middot; lead dev life &middot; things i'm building
+    </div>
+    <nav class="main-nav">
+      {navLinks.map((link) => (
+        <a href={link.href} class:list={['nav-link', { active: isActive(link.href) }]}>
+          <span class="nav-prefix">./</span>{link.label}
+        </a>
+      ))}
+    </nav>
   </div>
-  <div class="tagline">
-    // personal journal &middot; lead dev life &middot; things i'm building
-  </div>
-  <nav class="main-nav">
-    {navLinks.map((link) => (
-      <a href={link.href} class:list={['nav-link', { active: isActive(link.href) }]}>
-        <span class="nav-prefix">./</span>{link.label}
-      </a>
-    ))}
-  </nav>
 </header>
 
 <style>
@@ -42,8 +48,14 @@ const navLinks = [
     background: var(--base02);
   }
 
-  /* Prompt bar */
+  /* Prompt bar — full width background, centered content */
   .prompt-bar {
+    background: var(--base01);
+  }
+
+  .prompt-bar-inner {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
     display: flex;
     align-items: center;
     font-family: var(--font-mono);
@@ -84,9 +96,22 @@ const navLinks = [
     margin-left: auto;
   }
 
+  /* Header content — centered */
+  .header-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
   /* Site name row */
+  .site-name-link {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
   .site-name-row {
-    padding: 14px 16px 6px;
+    padding: 14px 0 6px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -119,12 +144,12 @@ const navLinks = [
     font-size: 13px;
     font-style: italic;
     color: var(--base0);
-    padding: 0 16px 8px;
+    padding: 0 0 8px;
   }
 
   /* Navigation */
   .main-nav {
-    padding: 8px 16px 12px;
+    padding: 8px 0 12px;
     display: flex;
     gap: 0;
   }

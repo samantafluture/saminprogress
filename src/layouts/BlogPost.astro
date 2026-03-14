@@ -21,6 +21,13 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
 <BaseLayout title={title} description={description}>
   <article class="blog-post">
+    <nav class="breadcrumbs">
+      <a href="/" class="breadcrumb-link">home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/blog" class="breadcrumb-link">writing</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">{title}</span>
+    </nav>
     <header class="post-header">
       {heroImage && <img src={heroImage} alt="" />}
       <div class="post-meta">
@@ -37,19 +44,52 @@ const formattedDate = date.toLocaleDateString('en-US', {
       <h1 class="post-title">
         <span class="title-prefix">&gt; </span>{title}
       </h1>
-      {tags.length > 0 && (
-        <div class="post-tags">
-          {tags.map((tag) => <span class="tag">#{tag}</span>)}
-        </div>
-      )}
     </header>
     <div class="post-content">
       <slot />
+    </div>
+    {tags.length > 0 && (
+      <footer class="post-footer">
+        <div class="post-tags">
+          {tags.map((tag) => <a href={`/blog/tag/${tag}/`} class="tag">#{tag}</a>)}
+        </div>
+      </footer>
+    )}
+    <div class="back-link">
+      <a href="/blog">&larr; back to writing</a>
     </div>
   </article>
 </BaseLayout>
 
 <style>
+  /* Breadcrumbs */
+  .breadcrumbs {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--base1);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb-link {
+    color: var(--cyan);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--blue);
+  }
+
+  .breadcrumb-sep {
+    color: var(--base1);
+    margin: 0 4px;
+  }
+
+  .breadcrumb-current {
+    color: var(--base00);
+  }
+
+  /* Header */
   .post-header {
     margin-bottom: 2rem;
   }
@@ -67,10 +107,10 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
   .post-title {
     font-family: var(--font-mono);
-    font-size: 19px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 700;
     color: var(--base01);
-    line-height: 1.25;
+    line-height: 1.35;
     margin-bottom: 8px;
   }
 
@@ -78,27 +118,16 @@ const formattedDate = date.toLocaleDateString('en-US', {
     color: var(--yellow);
   }
 
-  .post-tags {
-    display: flex;
-    gap: 12px;
-  }
-
-  .tag {
-    font-family: var(--font-serif);
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 600;
-    color: var(--cyan);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
   /* Article body content */
   .post-content {
     font-family: var(--font-serif);
-    font-size: 15px;
+    font-size: 17px;
     color: var(--base00);
-    line-height: 1.55;
+    line-height: 1.65;
+  }
+
+  .post-content :global(h1) {
+    display: none;
   }
 
   .post-content :global(h2) {
@@ -141,7 +170,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
   .post-content :global(code) {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 14px;
     background: var(--base2);
     padding: 2px 5px;
   }
@@ -186,5 +215,50 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
   .post-content :global(img) {
     margin: 1rem 0;
+  }
+
+  /* Post footer with tags */
+  .post-footer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--base2);
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .tag {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--cyan);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .tag:hover {
+    color: var(--base01);
+  }
+
+  /* Back link */
+  .back-link {
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+
+  .back-link a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  .back-link a:hover {
+    color: var(--blue);
   }
 </style>
