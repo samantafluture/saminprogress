@@ -98,7 +98,7 @@ Nginx serves from Docker volume `saminprogress_web` mounted at `/usr/share/nginx
 ## 9. Obsidian Sync
 
 Blog drafts are written in the Obsidian vault at:
-`/home/samantafluture/Obsidian/Cherry-Tasks/blog-drafts/`
+`/mnt/c/Users/saman/Obsidian/Cherry-Tasks/blog-drafts/`
 
 This folder syncs across all devices via Syncthing (PC, VPS, Android).
 Drafts are NOT auto-published — the `/publish` skill copies approved drafts

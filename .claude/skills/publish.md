@@ -8,7 +8,7 @@ Publish saminprogress to production. This handles the full pipeline: drafts → 
 
 ## Step 1: Check for new drafts in Obsidian
 
-Look for `.md` files in `/home/samantafluture/Obsidian/Cherry-Tasks/blog-drafts/`.
+Look for `.md` files in `/mnt/c/Users/saman/Obsidian/Cherry-Tasks/blog-drafts/`.
 
 For each file found:
 - Read the file and check if it has valid frontmatter (title, description, date, tags, draft)

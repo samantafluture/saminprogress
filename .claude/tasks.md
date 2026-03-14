@@ -6,24 +6,25 @@
 ## Active Sprint
 
 ### P0 — Must do now
-
-All P0 tasks completed.
+- [ ] Implement UI design from `/design` skill spec `[L]` #design
+  > Note: the two previous P0 tasks (edit first post + improve editor skill) were completed on 2026-03-14 and moved to Completed
+  - [ ] Add Google Fonts (IBM Plex Mono + Source Serif 4)
+  - [ ] Implement CSS variables (Solarized Light palette)
+  - [ ] Build header component (prompt bar, site name with cursor, tagline, nav)
+  - [ ] Build post list component (section label, post items with meta/title/tags/excerpt)
+  - [ ] Style blog post page (typography, spacing, code blocks)
+  - [ ] Style global layout (680px max-width, left-aligned, no rounded corners/shadows)
+  - [ ] Build and deploy
+  > Design spec: `.claude/skills/design.md` — Solarized Light terminal theme
 
 ### P1 — Should do this week
-- [x] Connect Obsidian to Astro posts via blog-drafts workflow `[M]` #devops ✅ 2026-03-13
-  - [x] Created `blog-drafts/` folder in Cherry-Tasks Obsidian vault (synced via Syncthing)
-  - [x] Created draft template with frontmatter
-  - [x] Updated `/publish` skill to pull drafts → copy to blog → build → deploy
-  - [x] Updated dashboard.md with publishing instructions
-- [x] Write first blog post `[S]` #content ✅ 2026-03-13
-  - [x] "A Friday I Didn't Plan For" — live at /blog/a-friday-i-didnt-plan-for/
-- [x] Create `/editor` skill for voice-consistent proofreading `[M]` #skills ✅ 2026-03-13
-  - [x] Created `.claude/skills/editor.md` with voice markers and editing rules
-  - [x] Tested against first blog post — light touch, approved by Sam
+- [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops
+  - [ ] DNS propagation complete
+  - [ ] Certbot SSL certificate for saminprogress.tech + www
+  - [ ] Update Nginx config with HTTPS for new domain
+  - [ ] Update `astro.config.mjs` site URL
 
 ### P2 — Nice to have
-- [ ] Design implementation (2000s CRT aesthetic) `[L]` #design
-  > Separate task — will receive design brief later
 - [ ] Add VPS sync script entry for saminprogress `[S]` #devops
   - [ ] Update `sync-tasks-to-repos.sh` PROJECT_MAP on VPS
   - [ ] Update `sync-tasks-from-repos.sh` PROJECT_MAP on VPS
@@ -31,6 +32,8 @@ All P0 tasks completed.
   > ⚠️ Manual step — check availability, register via preferred registrar, update DNS to Hostinger VPS IP
 - [ ] Switch Nginx config from `blog.samantafluture.com` to `saminprogress.dev` `[S]` #devops
   > Blocked until domain is registered
+- [ ] Remove `blog.samantafluture.com` and redirect to `saminprogress.tech` `[S]` #devops
+  > Once saminprogress.tech is fully working with SSL, update Nginx to 301 redirect blog.samantafluture.com → saminprogress.tech, then remove the old DNS record
 - [/] Fix GitHub Action deploy `[M]` #devops ⏳ in-progress
   > Root cause: Hostinger blocks SSH from cloud/datacenter IPs (GitHub Actions, Claude Code)
   > Solution: Replaced SSH-based deploy with webhook-based deploy
@@ -46,6 +49,23 @@ All P0 tasks completed.
 ## Blocked
 
 ## Completed (recent)
+- [x] Edit the first blog post `[S]` #content ✅ 2026-03-14
+  - [x] Removed all em dashes (10 occurrences)
+  - [x] New title: "What A Day Off Taught Me About Being a Lead Dev"
+  - [x] Deployed
+- [x] Improve `/editor` skill `[S]` #skills ✅ 2026-03-14
+  - [x] Added rule: posts should never use em dashes
+- [x] Create `/design` skill with full UI spec `[M]` #skills ✅ 2026-03-13
+  - [x] Solarized Light terminal theme, IBM Plex Mono + Source Serif 4
+  - [x] Header, post list, typography scale, color palette fully specced
+- [x] Create `/editor` skill for voice-consistent proofreading `[M]` #skills ✅ 2026-03-13
+  - [x] Created `.claude/skills/editor.md` with voice markers and editing rules
+  - [x] Tested against first blog post — light touch, approved by Sam
+- [x] Connect Obsidian to Astro posts via blog-drafts workflow `[M]` #devops ✅ 2026-03-13
+  - [x] Created `blog-drafts/` in Cherry-Tasks vault (Windows path, synced via Syncthing)
+  - [x] Updated `/publish` skill to pull drafts → copy to blog → build → deploy
+- [x] Write first blog post `[S]` #content ✅ 2026-03-13
+  - [x] "A Friday I Didn't Plan For" — live at /blog/a-friday-i-didnt-plan-for/
 - [x] Scaffold Astro project with blog template (pnpm) `[S]` #setup ✅ 2026-03-13
   - [x] Install Astro with mdx, rss, sitemap plugins
   - [x] Enable TypeScript strict mode
