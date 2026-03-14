@@ -15,8 +15,11 @@ All P0 tasks completed.
   - [x] Created draft template with frontmatter
   - [x] Updated `/publish` skill to pull drafts → copy to blog → build → deploy
   - [x] Updated dashboard.md with publishing instructions
-- [ ] Write first blog post `[S]` #content
-  > Waiting for content from Sam
+- [x] Write first blog post `[S]` #content ✅ 2026-03-13
+  - [x] "A Friday I Didn't Plan For" — live at /blog/a-friday-i-didnt-plan-for/
+- [x] Create `/editor` skill for voice-consistent proofreading `[M]` #skills ✅ 2026-03-13
+  - [x] Created `.claude/skills/editor.md` with voice markers and editing rules
+  - [x] Tested against first blog post — light touch, approved by Sam
 
 ### P2 — Nice to have
 - [ ] Design implementation (2000s CRT aesthetic) `[L]` #design
