@@ -35,6 +35,7 @@ The user will provide a blog post draft, either as:
 - No corporate language ever: no "in conclusion", no "it's worth noting", no "leverage", no "10x", no "actionable insights"
 - Vulnerable when it fits — not performative vulnerability, real vulnerability
 - Brazilian warmth in English prose — don't sterilize it
+- Never use em dashes (—). Sam doesn't use them. Use periods, commas, or restructure the sentence instead
 
 ## What NOT to do
 
