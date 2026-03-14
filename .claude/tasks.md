@@ -1,6 +1,6 @@
 # Project: saminprogress
 
-> Last synced to repo: —
+> Last synced to repo: 2026-03-14
 > Last agent update: 2026-03-14
 
 ## Active Sprint
@@ -11,101 +11,64 @@ All P0 tasks completed.
 
 ### P1 — Should do this week
 - [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
-  - [x] DNS A record added (resolves via Google/Cloudflare DNS)
-  - [x] CNAME www → saminprogress.tech added
-  - [ ] Certbot SSL certificate — blocked, Let's Encrypt secondary validators return NXDOMAIN
+  - [x] DNS A record added (`@` → 187.124.67.117)
+  - [x] CNAME `www` → saminprogress.tech added
+  - [x] Hostinger nameservers respond correctly (ns1/ns2.dns-parking.com)
+  - [ ] Certbot SSL certificate — blocked, .tech registry hasn't delegated NS to Hostinger yet
   - [ ] Update Nginx config with HTTPS for new domain
   - [ ] Update `astro.config.mjs` site URL
-  > .tech TLD registry hasn't delegated NS records yet. Can take up to 24-48h for new domains. Retry Certbot later.
+  > Domain registered 2026-03-14. Registry delegation can take 12-48h. Retry Certbot when ready.
+  > Traffic already reaches VPS (redirects to blog.samantafluture.com on HTTP).
 
 ### P2 — Nice to have
-- [x] Add VPS sync script entry for saminprogress `[S]` #devops ✅ 2026-03-14
-  - [x] Updated `sync-tasks-to-repos.sh` PROJECT_MAP on VPS
-  - [x] Updated `sync-tasks-from-repos.sh` PROJECT_MAP on VPS
-  - [x] Tested — sync works
-- [ ] Search and register domain `saminprogress.dev` `[S]` #manual
-  > ⚠️ Manual step — check availability, register via preferred registrar, update DNS to Hostinger VPS IP
-- [ ] Switch Nginx config from `blog.samantafluture.com` to `saminprogress.dev` `[S]` #devops
-  > Blocked until domain is registered
 - [ ] Remove `blog.samantafluture.com` and redirect to `saminprogress.tech` `[S]` #devops
-  > Once saminprogress.tech is fully working with SSL, update Nginx to 301 redirect blog.samantafluture.com → saminprogress.tech, then remove the old DNS record
+  > Once saminprogress.tech SSL works, update Nginx to 301 redirect, then remove old DNS record
+
+## Blocked
+
+## Completed (recent)
 - [x] Fix GitHub Action deploy `[M]` #devops ✅ 2026-03-14
-  > Replaced SSH with webhook-based deploy (unix socket)
   - [x] Webhook server on VPS (user systemd service, unix socket)
   - [x] Nginx proxies /webhook/deploy to unix socket
   - [x] GitHub Action triggers webhook via curl
   - [x] WEBHOOK_SECRET set on GitHub repo
   - [x] Full CI/CD tested — push to main auto-deploys
-
-## Blocked
-
-## Completed (recent)
+- [x] Add VPS sync script entry for saminprogress `[S]` #devops ✅ 2026-03-14
+  - [x] Updated both sync scripts on VPS, tested
 - [x] Change post URL slug to match title `[S]` #content ✅ 2026-03-14
   - [x] Renamed to /blog/what-a-day-off-taught-me-about-being-a-lead-dev/
 - [x] Build tag pages `[M]` #design ✅ 2026-03-14
-  - [x] Dynamic pages at /blog/tag/{tag}/ with grep-style terminal label
-  - [x] Breadcrumbs, filtered post list per tag
-  - [x] 8 tag pages generated
+  - [x] Dynamic pages at /blog/tag/{tag}/ — 8 tag pages generated
 - [x] Implement UI design from `/design` skill spec `[L]` #design ✅ 2026-03-14
   - [x] Solarized Light palette, IBM Plex Mono + Source Serif 4
   - [x] Terminal header with prompt bar, blinking cursor, nav
   - [x] Post list with terminal-style prefixes
 - [x] UI polish round 2 `[M]` #design ✅ 2026-03-14
-  - [x] Centered layout (1024px max-width, margin: 0 auto)
-  - [x] Header content centered, prompt bar contained at same max-width
-  - [x] Rocket emoji for dev branch, pushpin for montreal
-  - [x] Favicon: construction emoji
-  - [x] Post title font-weight 700, tighter word spacing
-  - [x] Tags cursor pointer, linked to tag pages
-  - [x] Post page: removed duplicate h1, tags at footer, breadcrumbs, back link
-  - [x] Post body 17px, base00 darkened for readability
-  - [x] saminprogress header clickable to home
+  - [x] Centered layout (1024px), favicon, breadcrumbs, back link
+  - [x] Post title 700 weight, tags at footer, responsive title (22px/28px)
+  - [x] base00 darkened, post body 17px, header clickable to home
 - [x] Edit the first blog post `[S]` #content ✅ 2026-03-14
-  - [x] Removed all em dashes (10 occurrences)
-  - [x] New title: "What A Day Off Taught Me About Being a Lead Dev"
-  - [x] Deployed
+  - [x] Removed all em dashes, new title, deployed
 - [x] Improve `/editor` skill `[S]` #skills ✅ 2026-03-14
-  - [x] Added rule: posts should never use em dashes
 - [x] Create `/design` skill with full UI spec `[M]` #skills ✅ 2026-03-13
-  - [x] Solarized Light terminal theme, IBM Plex Mono + Source Serif 4
-  - [x] Header, post list, typography scale, color palette fully specced
 - [x] Create `/editor` skill for voice-consistent proofreading `[M]` #skills ✅ 2026-03-13
-  - [x] Created `.claude/skills/editor.md` with voice markers and editing rules
-  - [x] Tested against first blog post — light touch, approved by Sam
 - [x] Connect Obsidian to Astro posts via blog-drafts workflow `[M]` #devops ✅ 2026-03-13
-  - [x] Created `blog-drafts/` in Cherry-Tasks vault (Windows path, synced via Syncthing)
-  - [x] Updated `/publish` skill to pull drafts → copy to blog → build → deploy
 - [x] Write first blog post `[S]` #content ✅ 2026-03-13
-  - [x] "A Friday I Didn't Plan For" — live at /blog/a-friday-i-didnt-plan-for/
 - [x] Scaffold Astro project with blog template (pnpm) `[S]` #setup ✅ 2026-03-13
-  - [x] Install Astro with mdx, rss, sitemap plugins
-  - [x] Enable TypeScript strict mode
-  - [x] Create CLAUDE.md and README.md
-  - [x] Set up content collection schema and blog layouts
-- [x] Initialize git repo + GitHub remote (main branch) `[S]` #setup ✅ 2026-03-13
-  - [x] Repo: github.com/samantafluture/saminprogress (public)
-  - [x] Default branch: main
+- [x] Initialize git repo + GitHub remote `[S]` #setup ✅ 2026-03-13
 - [x] Configure Nginx on VPS for `blog.samantafluture.com` `[M]` #devops ✅ 2026-03-13
-  - [x] Create Nginx server block for subdomain (HTTPS + security headers)
-  - [x] Run Certbot for SSL certificate (expires 2026-06-11)
-  - [x] Create `saminprogress_web` Docker volume + mount in infra-nginx
-  - [x] Test full deploy — site live at https://blog.samantafluture.com
-- [x] Set up deploy pipeline (local → VPS) `[M]` #devops ✅ 2026-03-13
-  - [x] `scripts/deploy.sh` — local deploy (pnpm build + rsync + Docker volume copy)
-  - [x] `scripts/deploy-vps.sh` — VPS-side deploy (used by CI)
-  - [x] `/publish` Claude Code skill created
-  - [x] GitHub Action `.github/workflows/deploy.yml` created (build passes, SSH blocked — see P2)
+- [x] Set up deploy pipeline (local + CI) `[M]` #devops ✅ 2026-03-13
 - [x] Install Volta + Node 22 + pnpm on VPS `[S]` #devops ✅ 2026-03-13
-- [x] Clone repo on VPS at `~/apps/saminprogress/` `[S]` #devops ✅ 2026-03-13
-- [x] Pin Node 22 via Volta in package.json `[S]` #setup ✅ 2026-03-13
-- [x] Set `VPS_SSH_KEY` secret on GitHub repo `[S]` #devops ✅ 2026-03-13
+- [x] Clone repo on VPS `[S]` #devops ✅ 2026-03-13
+- [x] Pin Node 22 via Volta `[S]` #setup ✅ 2026-03-13
 
 ## Notes
 - Check CLAUDE.md for architectural decisions before starting work
 - This is a static site — no runtime, no database, no backend
 - Posts are markdown with frontmatter (title, date, tags, description)
-- Agent should check CLAUDE.md before starting any P0 task
 - VPS IP: 187.124.67.117, SSH user: sam, SSH ports: 22 and 8443
 - Nginx config: ~/apps/infra/nginx/conf.d/saminprogress.conf
 - Docker volume: saminprogress_web (mounted at /usr/share/nginx/saminprogress/)
 - VPS repo: ~/apps/saminprogress/
+- Webhook: user systemd service, unix socket at /tmp/saminprogress-webhook.sock
+- Skills: /publish, /editor, /design
