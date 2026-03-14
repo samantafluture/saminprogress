@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostItem from '../../../components/PostItem.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))];
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts
+        .filter((post) => !post.data.draft && (post.data.tags || []).includes(tag))
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout title={`#${tag} — saminprogress`}>
+  <nav class="breadcrumbs">
+    <a href="/" class="breadcrumb-link">home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="/blog" class="breadcrumb-link">writing</a>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">#{tag}</span>
+  </nav>
+  <section class="post-list">
+    <div class="section-label">
+      <span class="label-prefix">$ grep </span><span class="label-tag">#{tag}</span><span class="label-path"> posts/*</span>
+    </div>
+    {posts.map((post) => (
+      <PostItem
+        title={post.data.title}
+        date={post.data.date}
+        description={post.data.description}
+        tags={post.data.tags}
+        slug={post.id}
+      />
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumbs {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--base1);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb-link {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--blue);
+  }
+
+  .breadcrumb-sep {
+    color: var(--base1);
+    margin: 0 4px;
+  }
+
+  .breadcrumb-current {
+    color: var(--base00);
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-prefix {
+    color: var(--green);
+  }
+
+  .label-tag {
+    color: var(--cyan);
+  }
+
+  .label-path {
+    color: var(--base1);
+  }
+</style>
