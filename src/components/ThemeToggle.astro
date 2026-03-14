@@ -43,21 +43,20 @@
   // Run immediately to prevent flash
   initTheme();
 
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
 
     toggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
-      if (next === 'light') {
+      if (isDark) {
         document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
       }
-
-      localStorage.setItem('theme', next);
     });
   });
 </script>
