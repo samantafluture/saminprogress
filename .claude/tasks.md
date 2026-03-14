@@ -17,11 +17,12 @@ All P0 tasks completed.
   - [x] Add `aria-hidden="true"` to decorative symbols (`/`, `#`, `>`, `←`, `~$`, `./`)
   > Plan: .claude/accessibility-plan.md — Phase 1
   > Agent: global focus-visible outline (yellow, 2px), adjusted 6 color variables across both themes, aria-hidden on all decorative symbols in 5 files
-- [ ] Accessibility fixes — Phase 2: High (navigation + structure) `[M]` #a11y
-  - [ ] Add skip-to-content link in BaseLayout
-  - [ ] Add `heroImageAlt` field to content schema + use in BlogPost
-  - [ ] Fix heading hierarchy (hidden h1 in post content)
+- [x] Accessibility fixes — Phase 2: High (navigation + structure) `[M]` #a11y ✅ 2026-03-14
+  - [x] Add skip-to-content link in BaseLayout
+  - [x] Add `heroImageAlt` field to content schema + use in BlogPost
+  - [x] Fix heading hierarchy (hidden h1 in post content)
   > Plan: .claude/accessibility-plan.md — Phase 2
+  > Agent: skip-link (visible on focus, yellow bar), heroImageAlt in schema + layout, sr-only clip instead of display:none for duplicate h1
 - [ ] Accessibility fixes — Phase 3: Moderate (polish) `[S]` #a11y
   - [ ] Add `prefers-reduced-motion` support for animations
   - [ ] Improve theme toggle assistive tech (dynamic aria-label)

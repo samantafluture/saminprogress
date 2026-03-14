@@ -30,10 +30,29 @@ const { title, description = 'saminprogress — a personal blog' } = Astro.props
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />
   </body>
+<style>
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 8px 16px;
+    background: var(--yellow);
+    color: var(--base03);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+</style>
 </html>

@@ -8,9 +8,10 @@ interface Props {
   tags?: string[];
   updatedDate?: Date;
   heroImage?: string;
+  heroImageAlt?: string;
 }
 
-const { title, description, date, tags = [], updatedDate, heroImage } = Astro.props;
+const { title, description, date, tags = [], updatedDate, heroImage, heroImageAlt } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -29,7 +30,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
       <span class="breadcrumb-current">{title}</span>
     </nav>
     <header class="post-header">
-      {heroImage && <img src={heroImage} alt="" />}
+      {heroImage && <img src={heroImage} alt={heroImageAlt || ""} />}
       <div class="post-meta">
         <span class="meta-prefix" aria-hidden="true"># </span>
         <time datetime={date.toISOString()}>{formattedDate}</time>
@@ -132,8 +133,17 @@ const formattedDate = date.toLocaleDateString('en-US', {
     }
   }
 
+  /* Hide duplicate h1 from markdown — the post title is already in .post-title */
   .post-content :global(h1) {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .post-content :global(h2) {
