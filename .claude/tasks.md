@@ -23,12 +23,13 @@ All P0 tasks completed.
   - [x] Fix heading hierarchy (hidden h1 in post content)
   > Plan: .claude/accessibility-plan.md — Phase 2
   > Agent: skip-link (visible on focus, yellow bar), heroImageAlt in schema + layout, sr-only clip instead of display:none for duplicate h1
-- [ ] Accessibility fixes — Phase 3: Moderate (polish) `[S]` #a11y
-  - [ ] Add `prefers-reduced-motion` support for animations
-  - [ ] Improve theme toggle assistive tech (dynamic aria-label)
-  - [ ] Upgrade breadcrumb semantics (`<ol>`, `aria-label`, `aria-current`)
-  - [ ] Add `aria-label` with post title to "read more" links
+- [x] Accessibility fixes — Phase 3: Moderate (polish) `[S]` #a11y ✅ 2026-03-14
+  - [x] Add `prefers-reduced-motion` support for animations
+  - [x] Improve theme toggle assistive tech (dynamic aria-label)
+  - [x] Upgrade breadcrumb semantics (`<ol>`, `aria-label`, `aria-current`)
+  - [x] Add `aria-label` with post title to "read more" links
   > Plan: .claude/accessibility-plan.md — Phase 3
+  > Agent: reduced-motion media query kills all animations/transitions, toggle label updates dynamically, breadcrumbs use ol/li with aria-label + aria-current, read-more includes post title
 - [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
   - [x] DNS A record added (`@` → 187.124.67.117)
   - [x] CNAME `www` → saminprogress.tech added

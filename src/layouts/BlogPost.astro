@@ -22,12 +22,12 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
 <BaseLayout title={title} description={description}>
   <article class="blog-post">
-    <nav class="breadcrumbs">
-      <a href="/" class="breadcrumb-link">home</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <a href="/blog" class="breadcrumb-link">writing</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <span class="breadcrumb-current">{title}</span>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/" class="breadcrumb-link">home</a><span class="breadcrumb-sep" aria-hidden="true">/</span></li>
+        <li><a href="/blog" class="breadcrumb-link">writing</a><span class="breadcrumb-sep" aria-hidden="true">/</span></li>
+        <li><span class="breadcrumb-current" aria-current="page">{title}</span></li>
+      </ol>
     </nav>
     <header class="post-header">
       {heroImage && <img src={heroImage} alt={heroImageAlt || ""} />}
@@ -69,6 +69,18 @@ const formattedDate = date.toLocaleDateString('en-US', {
     font-size: 11px;
     color: var(--fg-faint);
     margin-bottom: 1.5rem;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
   }
 
   .breadcrumb-link {

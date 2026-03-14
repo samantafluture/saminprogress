@@ -36,7 +36,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   {description && (
     <p class="post-excerpt">{description}</p>
   )}
-  <a href={`/blog/${slug}/`} class="read-more"><span aria-hidden="true">&rarr; </span>read more</a>
+  <a href={`/blog/${slug}/`} class="read-more" aria-label={`read more: ${title}`}><span aria-hidden="true">&rarr; </span>read more</a>
 </article>
 
 <style>
