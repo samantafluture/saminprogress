@@ -49,7 +49,7 @@ I let the team down in two ways on the same release. I'm owning that.
 
 The harder thing I'm sitting with is this: I have a strong instinct to protect my team. I like knowing people feel safe, confident, not stressed. I tend to be the one who absorbs pressure so others don't have to. And I've been learning that this instinct, while it comes from a real place, can get in the way.
 
-Not every uncomfortable moment should be shielded away. Some of them are where the growth lives — for the team, and for me. Today was uncomfortable. Today was also real growth. Thomas stepped up and did the deploy without me. The team figured it out. That matters more than the fact that it was stressful.
+Not every uncomfortable moment should be shielded away. Some of them are where the growth lives — for the team, and for me. Today was uncomfortable. Today was also real growth. one developer of the team stepped up and did the deploy without me. The team figured it out. That matters more than the fact that it was stressful.
 
 I also noticed something more personal today, sitting with all of this: part of why incidents like this hit me so hard is ego. Not in a bad way, but in an honest way. I want to do right. I want to be good. I don't want to let people down because I genuinely care about them — but also because I care about how I show up. That's worth knowing about yourself.
 
@@ -57,7 +57,7 @@ I also noticed something more personal today, sitting with all of this: part of 
 
 By the time I fully put the phone down it was almost noon. Three hours of a day off spent in my own head at a library table.
 
-But then something shifted. I wrote it all down. I talked it through. I drafted a note to my team. I wrote something personal to Thomas, who did the deploy. I mapped out my retro talking points. And somewhere in that process the weight got lighter — not because the situation changed, but because I'd processed it properly.
+But then something shifted. I wrote it all down. I talked it through. I drafted a note to my team. I wrote something personal to one developer of the team, who did the deploy. I mapped out my retro talking points. And somewhere in that process the weight got lighter — not because the situation changed, but because I'd processed it properly.
 
 And then, almost by accident, I started planning a blog.
 
