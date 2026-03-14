@@ -1,7 +1,7 @@
 # Project: saminprogress
 
 > Last synced to repo: —
-> Last agent update: 2026-03-13
+> Last agent update: 2026-03-14
 
 ## Active Sprint
 
@@ -31,11 +31,17 @@ All P0 tasks completed.
   > ⚠️ Manual step — check availability, register via preferred registrar, update DNS to Hostinger VPS IP
 - [ ] Switch Nginx config from `blog.samantafluture.com` to `saminprogress.dev` `[S]` #devops
   > Blocked until domain is registered
-- [ ] Fix GitHub Action SSH deploy `[S]` #devops
-  > GitHub Actions can't reach VPS SSH (port 22 or 8443) — times out consistently
-  > Likely a Hostinger network/firewall issue (fincherry worked 5 days ago, same setup)
-  > Action config is correct and ready — will work once network issue resolves
-  > In the meantime, deploy locally via `bash scripts/deploy.sh` or `/publish` skill
+- [/] Fix GitHub Action deploy `[M]` #devops ⏳ in-progress
+  > Root cause: Hostinger blocks SSH from cloud/datacenter IPs (GitHub Actions, Claude Code)
+  > Solution: Replaced SSH-based deploy with webhook-based deploy
+  > Agent: Created webhook server, systemd service, Nginx route, updated GitHub Action (2026-03-14)
+  - [x] Created `scripts/webhook-server.js` — Node.js HTTP server with secret token auth
+  - [x] Created `scripts/saminprogress-webhook.service` — systemd unit file
+  - [x] Updated `nginx/saminprogress.conf` — added `/webhook/deploy` proxy route
+  - [x] Updated `.github/workflows/deploy.yml` — uses `curl` instead of SSH
+  - [x] Created `scripts/setup-webhook.sh` — one-command VPS setup
+  - [ ] Run `bash scripts/setup-webhook.sh` on VPS (manual step)
+  - [ ] Add `WEBHOOK_SECRET` to GitHub repo secrets
 
 ## Blocked
 
