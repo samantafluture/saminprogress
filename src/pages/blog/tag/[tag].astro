@@ -24,9 +24,9 @@ const { tag, posts } = Astro.props;
 <BaseLayout title={`#${tag} — saminprogress`}>
   <nav class="breadcrumbs">
     <a href="/" class="breadcrumb-link">home</a>
-    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
     <a href="/blog" class="breadcrumb-link">writing</a>
-    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
     <span class="breadcrumb-current">#{tag}</span>
   </nav>
   <section class="post-list">

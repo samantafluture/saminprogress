@@ -23,15 +23,15 @@ const formattedDate = date.toLocaleDateString('en-US', {
   <article class="blog-post">
     <nav class="breadcrumbs">
       <a href="/" class="breadcrumb-link">home</a>
-      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
       <a href="/blog" class="breadcrumb-link">writing</a>
-      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
       <span class="breadcrumb-current">{title}</span>
     </nav>
     <header class="post-header">
       {heroImage && <img src={heroImage} alt="" />}
       <div class="post-meta">
-        <span class="meta-prefix"># </span>
+        <span class="meta-prefix" aria-hidden="true"># </span>
         <time datetime={date.toISOString()}>{formattedDate}</time>
         {updatedDate && (
           <span>
@@ -42,7 +42,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
         )}
       </div>
       <h1 class="post-title">
-        <span class="title-prefix">&gt; </span>{title}
+        <span class="title-prefix" aria-hidden="true">&gt; </span>{title}
       </h1>
     </header>
     <div class="post-content">
@@ -56,7 +56,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
       </footer>
     )}
     <div class="back-link">
-      <a href="/blog">&larr; back to writing</a>
+      <a href="/blog"><span aria-hidden="true">&larr; </span>back to writing</a>
     </div>
   </article>
 </BaseLayout>

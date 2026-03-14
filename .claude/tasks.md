@@ -10,12 +10,13 @@
 All P0 tasks completed.
 
 ### P1 — Should do this week
-- [ ] Accessibility fixes — Phase 1: Critical (focus + contrast) `[M]` #a11y
-  - [ ] Add `:focus-visible` styles to all interactive elements (links, buttons, tags, nav)
-  - [ ] Fix dark theme contrast — `--fg-faint` and `--fg-muted` values
-  - [ ] Fix light theme contrast — `--fg-faint`, `--fg-muted`, and `--cyan` link color
-  - [ ] Add `aria-hidden="true"` to decorative symbols (`/`, `#`, `>`, `←`)
+- [x] Accessibility fixes — Phase 1: Critical (focus + contrast) `[M]` #a11y ✅ 2026-03-14
+  - [x] Add `:focus-visible` styles to all interactive elements (links, buttons, tags, nav)
+  - [x] Fix dark theme contrast — `--fg-faint` and `--fg-muted` values
+  - [x] Fix light theme contrast — `--fg-faint`, `--fg-muted`, and `--cyan` link color
+  - [x] Add `aria-hidden="true"` to decorative symbols (`/`, `#`, `>`, `←`, `~$`, `./`)
   > Plan: .claude/accessibility-plan.md — Phase 1
+  > Agent: global focus-visible outline (yellow, 2px), adjusted 6 color variables across both themes, aria-hidden on all decorative symbols in 5 files
 - [ ] Accessibility fixes — Phase 2: High (navigation + structure) `[M]` #a11y
   - [ ] Add skip-to-content link in BaseLayout
   - [ ] Add `heroImageAlt` field to content schema + use in BlogPost

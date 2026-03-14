@@ -28,7 +28,7 @@ const navLinks = [
     <div class="site-name-row-wrapper">
       <a href="/" class="site-name-link">
         <div class="site-name-row">
-          <span class="prompt-symbol">~$</span>
+          <span class="prompt-symbol" aria-hidden="true">~$</span>
           <span class="site-name">saminprogress</span>
           <span class="cursor" aria-hidden="true"></span>
         </div>
@@ -41,7 +41,7 @@ const navLinks = [
     <nav class="main-nav">
       {navLinks.map((link) => (
         <a href={link.href} class:list={['nav-link', { active: isActive(link.href) }]}>
-          <span class="nav-prefix">./</span>{link.label}
+          <span class="nav-prefix" aria-hidden="true">./</span>{link.label}
         </a>
       ))}
     </nav>

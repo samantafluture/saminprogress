@@ -7,14 +7,14 @@
   --bg-header:   #073642;
   --fg:          #4A5568;
   --fg-strong:   #586E75;
-  --fg-muted:    #839496;
-  --fg-faint:    #93A1A1;
+  --fg-muted:    #657B83;
+  --fg-faint:    #718C93;
   --border:      #EEE8D5;
 
   /* accents — same in both themes */
   --yellow:  #B58900;
   --blue:    #268BD2;
-  --cyan:    #2AA198;
+  --cyan:    #1A8A82;
   --green:   #859900;
   --orange:  #CB4B16;
   --red:     #DC322F;
@@ -41,8 +41,8 @@
   --bg-header:   #073642;
   --fg:          #B8C4C4;
   --fg-strong:   #EEE8D5;
-  --fg-muted:    #839496;
-  --fg-faint:    #586E75;
+  --fg-muted:    #93A1A1;
+  --fg-faint:    #839496;
   --border:      #073642;
 
   --base03:  #002B36;
@@ -73,6 +73,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Global focus indicator */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
 }
 
 ul, ol {
