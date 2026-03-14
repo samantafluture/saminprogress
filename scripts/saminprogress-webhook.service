@@ -1,0 +1,15 @@
+[Unit]
+Description=saminprogress deploy webhook
+After=network.target
+
+[Service]
+Type=simple
+User=sam
+WorkingDirectory=/home/sam/apps/saminprogress
+ExecStart=/home/sam/.volta/bin/node scripts/webhook-server.js
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=/home/sam/.config/saminprogress/webhook.env
+
+[Install]
+WantedBy=multi-user.target

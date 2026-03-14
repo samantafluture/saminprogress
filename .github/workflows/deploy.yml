@@ -9,8 +9,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    name: Build
+  build-and-deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -29,21 +29,20 @@ jobs:
       - name: Build static site
         run: pnpm build
 
-  deploy:
-    name: Deploy to VPS
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Trigger deploy webhook on VPS
+        run: |
+          status=$(curl -s -o /dev/null -w "%{http_code}" \
+            --connect-timeout 10 \
+            --max-time 30 \
+            -X POST \
+            -H "X-Webhook-Secret: ${{ secrets.WEBHOOK_SECRET }}" \
+            https://blog.samantafluture.com/webhook/deploy)
 
-    steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: 187.124.67.117
-          username: sam
-          port: 22
-          key: ${{ secrets.VPS_SSH_KEY }}
-          timeout: 60s
-          script: |
-            cd ~/apps/saminprogress
-            git pull origin main
-            bash scripts/deploy-vps.sh
+          if [ "$status" = "200" ]; then
+            echo "Deploy triggered successfully"
+          elif [ "$status" = "409" ]; then
+            echo "Deploy already in progress"
+          else
+            echo "Deploy webhook failed with status $status"
+            exit 1
+          fi
