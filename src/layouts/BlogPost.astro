@@ -107,7 +107,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
   .post-title {
     font-family: var(--font-mono);
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--base01);
     line-height: 1.35;
@@ -124,6 +124,12 @@ const formattedDate = date.toLocaleDateString('en-US', {
     font-size: 17px;
     color: var(--base00);
     line-height: 1.65;
+  }
+
+  @media (min-width: 768px) {
+    .post-title {
+      font-size: 28px;
+    }
   }
 
   .post-content :global(h1) {
