@@ -6,23 +6,17 @@
 ## Active Sprint
 
 ### P0 — Must do now
-- [ ] Implement UI design from `/design` skill spec `[L]` #design
-  > Note: the two previous P0 tasks (edit first post + improve editor skill) were completed on 2026-03-14 and moved to Completed
-  - [ ] Add Google Fonts (IBM Plex Mono + Source Serif 4)
-  - [ ] Implement CSS variables (Solarized Light palette)
-  - [ ] Build header component (prompt bar, site name with cursor, tagline, nav)
-  - [ ] Build post list component (section label, post items with meta/title/tags/excerpt)
-  - [ ] Style blog post page (typography, spacing, code blocks)
-  - [ ] Style global layout (680px max-width, left-aligned, no rounded corners/shadows)
-  - [ ] Build and deploy
-  > Design spec: `.claude/skills/design.md` — Solarized Light terminal theme
+
+All P0 tasks completed.
 
 ### P1 — Should do this week
-- [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops
-  - [ ] DNS propagation complete
-  - [ ] Certbot SSL certificate for saminprogress.tech + www
+- [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
+  - [x] DNS A record added (resolves via Google/Cloudflare DNS)
+  - [x] CNAME www → saminprogress.tech added
+  - [ ] Certbot SSL certificate — blocked, Let's Encrypt secondary validators return NXDOMAIN
   - [ ] Update Nginx config with HTTPS for new domain
   - [ ] Update `astro.config.mjs` site URL
+  > .tech TLD registry hasn't delegated NS records yet. Can take up to 24-48h for new domains. Retry Certbot later.
 
 ### P2 — Nice to have
 - [ ] Add VPS sync script entry for saminprogress `[S]` #devops
@@ -49,6 +43,26 @@
 ## Blocked
 
 ## Completed (recent)
+- [x] Change post URL slug to match title `[S]` #content ✅ 2026-03-14
+  - [x] Renamed to /blog/what-a-day-off-taught-me-about-being-a-lead-dev/
+- [x] Build tag pages `[M]` #design ✅ 2026-03-14
+  - [x] Dynamic pages at /blog/tag/{tag}/ with grep-style terminal label
+  - [x] Breadcrumbs, filtered post list per tag
+  - [x] 8 tag pages generated
+- [x] Implement UI design from `/design` skill spec `[L]` #design ✅ 2026-03-14
+  - [x] Solarized Light palette, IBM Plex Mono + Source Serif 4
+  - [x] Terminal header with prompt bar, blinking cursor, nav
+  - [x] Post list with terminal-style prefixes
+- [x] UI polish round 2 `[M]` #design ✅ 2026-03-14
+  - [x] Centered layout (1024px max-width, margin: 0 auto)
+  - [x] Header content centered, prompt bar contained at same max-width
+  - [x] Rocket emoji for dev branch, pushpin for montreal
+  - [x] Favicon: construction emoji
+  - [x] Post title font-weight 700, tighter word spacing
+  - [x] Tags cursor pointer, linked to tag pages
+  - [x] Post page: removed duplicate h1, tags at footer, breadcrumbs, back link
+  - [x] Post body 17px, base00 darkened for readability
+  - [x] saminprogress header clickable to home
 - [x] Edit the first blog post `[S]` #content ✅ 2026-03-14
   - [x] Removed all em dashes (10 occurrences)
   - [x] New title: "What A Day Off Taught Me About Being a Lead Dev"
