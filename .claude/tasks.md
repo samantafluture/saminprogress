@@ -10,6 +10,23 @@
 All P0 tasks completed.
 
 ### P1 — Should do this week
+- [ ] Accessibility fixes — Phase 1: Critical (focus + contrast) `[M]` #a11y
+  - [ ] Add `:focus-visible` styles to all interactive elements (links, buttons, tags, nav)
+  - [ ] Fix dark theme contrast — `--fg-faint` and `--fg-muted` values
+  - [ ] Fix light theme contrast — `--fg-faint`, `--fg-muted`, and `--cyan` link color
+  - [ ] Add `aria-hidden="true"` to decorative symbols (`/`, `#`, `>`, `←`)
+  > Plan: .claude/accessibility-plan.md — Phase 1
+- [ ] Accessibility fixes — Phase 2: High (navigation + structure) `[M]` #a11y
+  - [ ] Add skip-to-content link in BaseLayout
+  - [ ] Add `heroImageAlt` field to content schema + use in BlogPost
+  - [ ] Fix heading hierarchy (hidden h1 in post content)
+  > Plan: .claude/accessibility-plan.md — Phase 2
+- [ ] Accessibility fixes — Phase 3: Moderate (polish) `[S]` #a11y
+  - [ ] Add `prefers-reduced-motion` support for animations
+  - [ ] Improve theme toggle assistive tech (dynamic aria-label)
+  - [ ] Upgrade breadcrumb semantics (`<ol>`, `aria-label`, `aria-current`)
+  - [ ] Add `aria-label` with post title to "read more" links
+  > Plan: .claude/accessibility-plan.md — Phase 3
 - [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
   - [x] DNS A record added (`@` → 187.124.67.117)
   - [x] CNAME `www` → saminprogress.tech added
