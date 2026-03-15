@@ -39,8 +39,11 @@ No runtime. No database. No backend. Nginx serves the built `dist/` directory.
 ```
 src/
 ├── content/
-│   ├── blog/           ← markdown posts (synced via Syncthing)
+│   ├── blog/           ← published posts (Astro content collection)
 │   └── config.ts       ← content collection schema
+├── drafts/
+│   ├── ideas.md        ← running idea list
+│   └── *.md            ← work-in-progress drafts (status: draft | edited)
 ├── layouts/
 ├── pages/
 ├── components/
@@ -51,7 +54,7 @@ src/
 
 ## 5. Post Format
 
-Posts live in `src/content/blog/` as `.md` files with this frontmatter:
+Published posts live in `src/content/blog/` as `.md` files with this frontmatter:
 
 ```yaml
 ---
@@ -60,6 +63,18 @@ description: "One-line description"
 date: 2026-03-13
 tags: ["dev", "life"]
 draft: false
+---
+```
+
+Drafts in `src/drafts/` use the same format plus a `status` field:
+
+```yaml
+---
+title: "Post Title"
+description: "One-line description"
+date: 2026-03-13
+tags: ["dev", "life"]
+status: draft
 ---
 ```
 
@@ -95,24 +110,41 @@ Nginx serves from Docker volume `saminprogress_web` mounted at `/usr/share/nginx
 
 ---
 
-## 9. Obsidian Sync
+## 9. Blog Pipeline
 
-Blog drafts are written in the Obsidian vault at:
-`/mnt/c/Users/saman/Obsidian/Cherry-Tasks/blog-drafts/`
+The blog has three Claude Code skills that form a pipeline:
 
-This folder syncs across all devices via Syncthing (PC, VPS, Android).
-Drafts are NOT auto-published — the `/publish` skill copies approved drafts
-from `blog-drafts/` into `src/content/blog/`, builds, and deploys.
+```
+/writer → /editor → /publish
+```
 
-Published drafts get renamed with a `.published` suffix in the Obsidian folder.
+1. **Writer** (`/writer`) — Brainstorm conversationally, draft the post, save to `src/drafts/`
+2. **Editor** (`/editor`) — Polish prose, check tone, preserve voice
+3. **Publisher** (`/publish`) — Move from `src/drafts/` to `src/content/blog/`, build, deploy
+
+### Draft lifecycle
+
+Drafts live in `src/drafts/` with a `status` frontmatter field:
+- `status: draft` — fresh from the writer skill
+- `status: edited` — been through the editor skill, ready to publish
+
+### Quick idea capture
+
+Say `blog idea: <text>` and the writer skill saves it to `src/drafts/ideas.md`.
+
+### Legacy: Obsidian
+
+The publisher skill still checks `/mnt/c/Users/saman/Obsidian/Cherry-Tasks/blog-drafts/`
+as a fallback, but the primary workflow is now fully within Claude Code and the repo.
 
 ---
 
-## 10. Future Skills (not yet implemented)
+## 10. Skills
 
+- **Writer skill:** conversational brainstorming and drafting
 - **Editor skill:** voice-consistent proofreading (matches Sam's tone)
-- **Publisher skill:** automate post pipeline (build + deploy on new post)
-- **Designer skill:** UI implementation from design brief
+- **Publisher skill:** build and deploy pipeline
+- **Designer skill:** UI implementation from design brief (not yet implemented)
 
 ---
 
