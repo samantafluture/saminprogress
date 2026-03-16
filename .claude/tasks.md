@@ -1,35 +1,22 @@
 # Project: saminprogress
 
-> Last synced to repo: 2026-03-14
+> Last synced to repo: 2026-03-16T20:20:02+00:00
 > Last agent update: 2026-03-14
 
 ## Active Sprint
 
 ### P0 — Must do now
-
 All P0 tasks completed.
+- [ ] Create about page with linkedin content
+- [ ] Create projects page with github content
+- [ ] Create a home with a summary on myself and the site plus contact info
+- [ ] Create feat to lock posts from writing that I want under pay wall like Substack
 
 ### P1 — Should do this week
-- [x] Accessibility fixes — Phase 1: Critical (focus + contrast) `[M]` #a11y ✅ 2026-03-14
-  - [x] Add `:focus-visible` styles to all interactive elements (links, buttons, tags, nav)
-  - [x] Fix dark theme contrast — `--fg-faint` and `--fg-muted` values
-  - [x] Fix light theme contrast — `--fg-faint`, `--fg-muted`, and `--cyan` link color
-  - [x] Add `aria-hidden="true"` to decorative symbols (`/`, `#`, `>`, `←`, `~$`, `./`)
-  > Plan: .claude/accessibility-plan.md — Phase 1
-  > Agent: global focus-visible outline (yellow, 2px), adjusted 6 color variables across both themes, aria-hidden on all decorative symbols in 5 files
-- [x] Accessibility fixes — Phase 2: High (navigation + structure) `[M]` #a11y ✅ 2026-03-14
-  - [x] Add skip-to-content link in BaseLayout
-  - [x] Add `heroImageAlt` field to content schema + use in BlogPost
-  - [x] Fix heading hierarchy (hidden h1 in post content)
-  > Plan: .claude/accessibility-plan.md — Phase 2
-  > Agent: skip-link (visible on focus, yellow bar), heroImageAlt in schema + layout, sr-only clip instead of display:none for duplicate h1
-- [x] Accessibility fixes — Phase 3: Moderate (polish) `[S]` #a11y ✅ 2026-03-14
-  - [x] Add `prefers-reduced-motion` support for animations
-  - [x] Improve theme toggle assistive tech (dynamic aria-label)
-  - [x] Upgrade breadcrumb semantics (`<ol>`, `aria-label`, `aria-current`)
-  - [x] Add `aria-label` with post title to "read more" links
-  > Plan: .claude/accessibility-plan.md — Phase 3
-  > Agent: reduced-motion media query kills all animations/transitions, toggle label updates dynamically, breadcrumbs use ol/li with aria-label + aria-current, read-more includes post title
+
+### P2 — Nice to have
+
+## Blocked
 - [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
   - [x] DNS A record added (`@` → 187.124.67.117)
   - [x] CNAME `www` → saminprogress.tech added
@@ -39,14 +26,29 @@ All P0 tasks completed.
   - [ ] Update `astro.config.mjs` site URL
   > Domain registered 2026-03-14. Registry delegation can take 12-48h. Retry Certbot when ready.
   > Traffic already reaches VPS (redirects to blog.samantafluture.com on HTTP).
-
-### P2 — Nice to have
-- [ ] Remove `blog.samantafluture.com` and redirect to `saminprogress.tech` `[S]` #devops
-  > Once saminprogress.tech SSL works, update Nginx to 301 redirect, then remove old DNS record
-
-## Blocked
+- [ ] Make sure all Sam's domains go to same place now
 
 ## Completed (recent)
+- [x] Accessibility fixes — Phase 3: Moderate (polish) `[S]` #a11y ✅ 2026-03-16
+  - [x] Add `prefers-reduced-motion` support for animations
+  - [x] Improve theme toggle assistive tech (dynamic aria-label)
+  - [x] Upgrade breadcrumb semantics (`<ol>`, `aria-label`, `aria-current`)
+  - [x] Add `aria-label` with post title to "read more" links
+  > Plan: .claude/accessibility-plan.md — Phase 3
+  > Agent: reduced-motion media query kills all animations/transitions, toggle label updates dynamically, breadcrumbs use ol/li with aria-label + aria-current, read-more includes post title
+- [x] Accessibility fixes — Phase 2: High (navigation + structure) `[M]` #a11y ✅ 2026-03-16
+  - [x] Add skip-to-content link in BaseLayout
+  - [x] Add `heroImageAlt` field to content schema + use in BlogPost
+  - [x] Fix heading hierarchy (hidden h1 in post content)
+  > Plan: .claude/accessibility-plan.md — Phase 2
+  > Agent: skip-link (visible on focus, yellow bar), heroImageAlt in schema + layout, sr-only clip instead of display:none for duplicate h1
+- [x] Accessibility fixes — Phase 1: Critical (focus + contrast) `[M]` #a11y ✅ 2026-03-16
+  - [x] Add `:focus-visible` styles to all interactive elements (links, buttons, tags, nav)
+  - [x] Fix dark theme contrast — `--fg-faint` and `--fg-muted` values
+  - [x] Fix light theme contrast — `--fg-faint`, `--fg-muted`, and `--cyan` link color
+  - [x] Add `aria-hidden="true"` to decorative symbols (`/`, `#`, `>`, `←`, `~$`, `./`)
+  > Plan: .claude/accessibility-plan.md — Phase 1
+  > Agent: global focus-visible outline (yellow, 2px), adjusted 6 color variables across both themes, aria-hidden on all decorative symbols in 5 files
 - [x] Implement dark theme with toggle `[M]` #design ✅ 2026-03-14
   - [x] Solarized Dark palette, semantic CSS variables, ThemeToggle component
   - [x] localStorage + prefers-color-scheme, no flash on load
