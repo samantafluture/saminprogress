@@ -2,8 +2,12 @@
 title: "The Monday I Didn't Show Up"
 description: "How a sick day became a mirror, and what it revealed about avoidance, survival mode, and the life I actually want to build."
 date: 2026-03-16
-tags: ["life", "dev", "leadership", "burnout"]
-status: draft
+tags:
+  - life
+  - dev
+  - leadership
+  - burnout
+draft: false
 ---
 
 I called in sick on a Monday.
