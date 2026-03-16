@@ -1,14 +1,12 @@
 # Project: saminprogress
 
-> Last synced to repo: 2026-03-16T20:20:02+00:00
+> Last synced to repo: 2026-03-18T19:25:01+00:00
 > Last agent update: 2026-03-14
 
 ## Active Sprint
 
 ### P0 — Must do now
 All P0 tasks completed.
-- [ ] Create about page with linkedin content
-- [ ] Create projects page with github content
 - [ ] Create a home with a summary on myself and the site plus contact info
 - [ ] Create feat to lock posts from writing that I want under pay wall like Substack
 
@@ -29,6 +27,8 @@ All P0 tasks completed.
 - [ ] Make sure all Sam's domains go to same place now
 
 ## Completed (recent)
+- [x] Create projects page with github content ✅ 2026-03-18
+- [x] Create about page with linkedin content ✅ 2026-03-16
 - [x] Accessibility fixes — Phase 3: Moderate (polish) `[S]` #a11y ✅ 2026-03-16
   - [x] Add `prefers-reduced-motion` support for animations
   - [x] Improve theme toggle assistive tech (dynamic aria-label)
