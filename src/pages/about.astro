@@ -1,0 +1,784 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="about — saminprogress" description="About Samanta Fluture — lead dev, media artist, robotics enthusiast, based in Montreal.">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/" class="breadcrumb-link">home</a><span class="breadcrumb-sep" aria-hidden="true">/</span></li>
+      <li><span class="breadcrumb-current" aria-current="page">about</span></li>
+    </ol>
+  </nav>
+
+  <div class="section-label">
+    <span class="label-prefix">$ cat </span><span class="label-path">~/about.md</span>
+  </div>
+
+  <article class="about">
+    <!-- whoami -->
+    <header class="about-header">
+      <h1 class="about-title">
+        <span class="title-prefix" aria-hidden="true">&gt; </span>samanta fluture
+      </h1>
+      <div class="about-meta">
+        <span class="meta-prefix" aria-hidden="true"># </span>senior frontend developer &middot; lead &middot; montreal, qc
+      </div>
+    </header>
+
+    <section class="about-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>whoami
+      </h2>
+      <div class="about-prose">
+        <p>
+          I'm a passionate technologist with a strong grasp of current frameworks and libs,
+          and an interest in creating, refactoring and testing awesome and accessible interfaces.
+        </p>
+        <p>Currently, I am:</p>
+        <ul class="currently-list">
+          <li><span class="list-accent" aria-hidden="true">&bull;</span> <strong>Loving:</strong> TypeScript</li>
+          <li><span class="list-accent" aria-hidden="true">&bull;</span> <strong>Working with:</strong> React, GraphQL, Node.js</li>
+          <li><span class="list-accent" aria-hidden="true">&bull;</span> <strong>Building:</strong> Reusable UI components</li>
+          <li><span class="list-accent" aria-hidden="true">&bull;</span> <strong>Playing with:</strong> WebRTC, WebGL, Three.js</li>
+          <li><span class="list-accent" aria-hidden="true">&bull;</span> <strong>Learning:</strong> How to create AI agents with Python and run my own MCP server</li>
+        </ul>
+        <p>
+          When I'm not on the job, I love hiking to reach breathtaking views, teaching about
+          media art and creating cool robots with Arduino. Yes, I'm a total technology geek
+          with a passion for learning new things!
+        </p>
+      </div>
+    </section>
+
+    <!-- experience -->
+    <section class="about-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>experience
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Senior Frontend Developer &mdash; Lead</h3>
+            <span class="job-company">Turbulent <span class="company-detail">(a Cloud Imperium Company)</span></span>
+            <span class="job-date">Apr 2025 &ndash; Present &middot; Montreal</span>
+          </div>
+          <ul class="job-details">
+            <li>Led a team of front-end and UI developers, setting technical direction and priorities</li>
+            <li>Mentored dev team in React, TypeScript, GraphQL and modern build tools</li>
+            <li>Conducted daily code reviews to keep best practices</li>
+            <li>Owned technical roadmap, sprint planning, and releases together with PM</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Frontend Developer</h3>
+            <span class="job-company">Turbulent <span class="company-detail">(a Cloud Imperium Company)</span></span>
+            <span class="job-date">Oct 2022 &ndash; Apr 2025 &middot; 2 yrs 7 mos &middot; Montreal</span>
+          </div>
+          <ul class="job-details">
+            <li>Built component-driven UIs with React (TypeScript) and SASS for robertsspaceindustries.com</li>
+            <li>Maintained a Storybook library for reusable components</li>
+            <li>Integrated GraphQL APIs for efficient data fetching</li>
+            <li>Optimized frontend performance, reducing load times</li>
+            <li>Implemented localization (i18n) and currency changes for global audience</li>
+            <li>Delivered e-commerce features and streamlined purchase workflows</li>
+            <li>CI/CD pipelines with Docker, builds with Webpack and Vite</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Full Stack Developer</h3>
+            <span class="job-company">5TW</span>
+            <span class="job-date">Oct 2017 &ndash; Nov 2022 &middot; 5 yrs 2 mos</span>
+          </div>
+          <div class="job-tags">
+            <span class="skill-tag">HTML/CSS/JS</span>
+            <span class="skill-tag">Liquid</span>
+            <span class="skill-tag">Shopify API</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Angular</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Java / Spring</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">C Programming & Arduino Instructor</h3>
+            <span class="job-company">Arduino Workshops</span>
+            <span class="job-date">Jul 2015 &ndash; Dec 2016 &middot; 1 yr 6 mos &middot; São Paulo</span>
+          </div>
+          <p class="job-desc">
+            Taught Arduino and robotics programming at public institutions (Fab Lab Livre SP),
+            universities (PUC-SP, USP), and companies (Red Bull).
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Technical SEO / JS Consultant</h3>
+            <span class="job-company">Farfetch</span>
+            <span class="job-date">May 2015 &ndash; Dec 2015 &middot; 8 mos</span>
+          </div>
+          <p class="job-desc">
+            SEO-optimized content, keyword strategy, website architecture recommendations,
+            and SEO training for content teams.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Co-Founder, Creative Coder</h3>
+            <span class="job-company">Blending Visions <span class="company-detail">&mdash; Instituto de Tecnologia Criativa</span></span>
+            <span class="job-date">May 2014 &ndash; May 2015 &middot; 1 yr 1 mo &middot; São Paulo</span>
+          </div>
+          <p class="job-desc">
+            Built interactive platforms in emerging formats: VR/AR, installations,
+            mapping projections, mobile apps, games, and immersive websites.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Freelance Copywriter / Content Specialist</h3>
+            <span class="job-company">Brainstorm #9</span>
+            <span class="job-date">Dec 2012 &ndash; Dec 2016 &middot; 4 yrs 1 mo &middot; São Paulo</span>
+          </div>
+          <p class="job-desc">
+            In-depth articles for B9 (1.3M unique visitors/month). Trend forecasting,
+            interviews, content strategy, and tone of voice across all channels.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Digital Marketing Coordinator</h3>
+            <span class="job-company">Gaia Creative</span>
+            <span class="job-date">May 2010 &ndash; Oct 2012 &middot; 2 yrs 6 mos &middot; São Paulo</span>
+          </div>
+          <p class="job-desc">
+            Inbound marketing, PPC campaigns, SEO, and content strategy for clients
+            including BMW, Endeavor, SEBRAE, and Hospital Albert Einstein.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- skills -->
+    <section class="about-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>skills --list
+      </h2>
+
+      <div class="skills-group">
+        <h3 class="skills-category">languages</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3 class="skills-category">frontend</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Angular</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">Storybook</span>
+          <span class="skill-tag">SASS</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">Three.js</span>
+          <span class="skill-tag">WebGL</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3 class="skills-category">backend</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express</span>
+          <span class="skill-tag">Nest.js</span>
+          <span class="skill-tag">GraphQL</span>
+          <span class="skill-tag">Spring</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3 class="skills-category">databases</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3 class="skills-category">devops & tools</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Webpack</span>
+          <span class="skill-tag">Vite</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3 class="skills-category">hardware</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">Arduino</span>
+          <span class="skill-tag">Sensors</span>
+          <span class="skill-tag">Interactive Installations</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3 class="skills-category">languages spoken</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">English</span>
+          <span class="skill-tag">Portuguese</span>
+          <span class="skill-tag">Spanish</span>
+          <span class="skill-tag">French</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- education -->
+    <section class="about-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>education
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Postgraduate &mdash; Computer Software Engineering</h3>
+            <span class="job-company">Pontifícia Universidade Católica de Minas Gerais</span>
+            <span class="job-date">2020 &ndash; 2021</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Certificates &mdash; Computer Software Engineering</h3>
+            <span class="job-company">Caelum</span>
+            <span class="job-date">2021</span>
+          </div>
+          <p class="job-desc">
+            Java, Spring, OOP, SOLID, Design Patterns, ReactJS, Redux.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Master's &mdash; Intelligence Technology and Digital Design</h3>
+            <span class="job-company">Pontifícia Universidade Católica de São Paulo</span>
+            <span class="job-date">2013 &ndash; 2015</span>
+          </div>
+          <p class="job-desc">
+            Research: Cognitive Processes and Digital Environments.
+            Dissertation: "Digital Books for Mobile Devices &mdash; Rethinking Form and Content."
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Semester Abroad &mdash; Fine Art, Contemporary Practice</h3>
+            <span class="job-company">University of the Arts London</span>
+            <span class="job-date">2012</span>
+          </div>
+          <p class="job-desc">
+            Artworks combining collage and programming with Processing, JavaScript,
+            Unity 3D, and interactive installations with Arduino.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="job-title">Bachelor's &mdash; Communication and Marketing</h3>
+            <span class="job-company">Escola Superior de Propaganda e Marketing (ESPM)</span>
+            <span class="job-date">2007 &ndash; 2010</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- honors & residencies -->
+    <section class="about-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>honors &amp; residencies
+      </h2>
+
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">&#x1F3C6;</div>
+          <div class="highlight-content">
+            <h3 class="highlight-title">Maker in Residence</h3>
+            <span class="highlight-org">Red Bull Basement &middot; 2016</span>
+            <p class="highlight-desc">
+              Developed "Moskito Livre" &mdash; a low-budget hardware project
+              to help reduce dengue contamination in favelas.
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">&#x1F3C6;</div>
+          <div class="highlight-content">
+            <h3 class="highlight-title">Financial Support Award</h3>
+            <span class="highlight-org">Red Bull Digital Academy &middot; 2014</span>
+            <p class="highlight-desc">Winner project selected for financial support.</p>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">&#x1F3A8;</div>
+          <div class="highlight-content">
+            <h3 class="highlight-title">Artist in Residence</h3>
+            <span class="highlight-org">LabMIS &mdash; Museu da Imagem e do Som &middot; 2013</span>
+            <p class="highlight-desc">
+              Developed "Passageiro" &mdash; a mobile app to help users share
+              their thoughts and creations while in transit.
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">&#x1F4D6;</div>
+          <div class="highlight-content">
+            <h3 class="highlight-title">Published Author</h3>
+            <span class="highlight-org">Laboratório Aché &middot; 2011</span>
+            <p class="highlight-desc">
+              Co-authored "Social Media: Have a Safe and Healthy Digital Life" &mdash;
+              helping kids and young people navigate social media safely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- certifications -->
+    <section class="about-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>certifications
+      </h2>
+      <div class="cert-list">
+        <div class="cert-item">
+          <span class="cert-name">Graph Developer &mdash; Associate</span>
+          <span class="cert-org">Apollo GraphQL</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Linux System Administration &amp; DevOps</span>
+          <span class="cert-org">4Linux</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Tech Women Bootcamp 2021</span>
+          <span class="cert-org">VTEX</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Node.JS, Angular &amp; MongoDB</span>
+          <span class="cert-org">Impacta Tecnologia</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- links -->
+    <section class="about-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>links
+      </h2>
+      <div class="links-list">
+        <a href="https://github.com/samantafluture/" class="about-link" target="_blank" rel="noopener noreferrer">
+          <span class="link-arrow" aria-hidden="true">&rarr;</span> github.com/samantafluture
+        </a>
+        <a href="https://linkedin.com/in/samantafluture/" class="about-link" target="_blank" rel="noopener noreferrer">
+          <span class="link-arrow" aria-hidden="true">&rarr;</span> linkedin.com/in/samantafluture
+        </a>
+        <a href="https://dev.to/samantafluture" class="about-link" target="_blank" rel="noopener noreferrer">
+          <span class="link-arrow" aria-hidden="true">&rarr;</span> dev.to/samantafluture
+        </a>
+        <a href="https://x.com/samantafluture" class="about-link" target="_blank" rel="noopener noreferrer">
+          <span class="link-arrow" aria-hidden="true">&rarr;</span> x.com/samantafluture
+        </a>
+        <a href="mailto:samantafluture@gmail.com" class="about-link">
+          <span class="link-arrow" aria-hidden="true">&rarr;</span> samantafluture@gmail.com
+        </a>
+      </div>
+    </section>
+
+    <div class="back-link">
+      <a href="/"><span aria-hidden="true">&larr; </span>back to home</a>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Breadcrumbs — same pattern as blog posts & tag pages */
+  .breadcrumbs {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-faint);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb-link {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--blue);
+  }
+
+  .breadcrumb-sep {
+    color: var(--fg-faint);
+    margin: 0 4px;
+  }
+
+  .breadcrumb-current {
+    color: var(--fg);
+  }
+
+  /* Section label — terminal command */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-prefix {
+    color: var(--green);
+  }
+
+  .label-path {
+    color: var(--fg-faint);
+  }
+
+  /* About header */
+  .about-header {
+    margin-bottom: 2rem;
+  }
+
+  .about-title {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--fg-strong);
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+
+  .title-prefix {
+    color: var(--yellow);
+  }
+
+  .about-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-faint);
+  }
+
+  .meta-prefix {
+    color: var(--cyan);
+  }
+
+  @media (min-width: 768px) {
+    .about-title {
+      font-size: 28px;
+    }
+  }
+
+  /* Sections */
+  .about-section {
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-heading {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--fg-strong);
+    margin-bottom: 1.25rem;
+  }
+
+  .heading-prefix {
+    color: var(--cyan);
+  }
+
+  /* Prose */
+  .about-prose {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    color: var(--fg);
+    line-height: 1.65;
+  }
+
+  .about-prose p {
+    margin-bottom: 1rem;
+  }
+
+  .currently-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .currently-list li {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 0.25rem;
+    padding-left: 1rem;
+    text-indent: -1rem;
+  }
+
+  .list-accent {
+    color: var(--yellow);
+  }
+
+  .currently-list strong {
+    color: var(--fg-strong);
+  }
+
+  /* Timeline — experience & education */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+  }
+
+  .timeline-header {
+    margin-bottom: 0.5rem;
+  }
+
+  .job-title {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg-strong);
+    margin-bottom: 2px;
+  }
+
+  .job-company {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg);
+    margin-bottom: 2px;
+  }
+
+  .company-detail {
+    font-weight: 400;
+    color: var(--fg-muted);
+  }
+
+  .job-date {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-faint);
+  }
+
+  .job-details {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .job-details li {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--fg);
+    line-height: 1.55;
+    margin-bottom: 0.2rem;
+  }
+
+  .job-desc {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--fg);
+    line-height: 1.55;
+    margin-top: 0.5rem;
+  }
+
+  .job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.5rem;
+  }
+
+  /* Skills */
+  .skills-group {
+    margin-bottom: 1rem;
+  }
+
+  .skills-category {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--fg-faint);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--fg-strong);
+    background: var(--bg-alt);
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  /* Highlights — honors & residencies */
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .highlight-card {
+    display: flex;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--yellow);
+  }
+
+  .highlight-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
+  .highlight-content {
+    flex: 1;
+  }
+
+  .highlight-title {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg-strong);
+    margin-bottom: 2px;
+  }
+
+  .highlight-org {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-faint);
+    margin-bottom: 0.35rem;
+  }
+
+  .highlight-desc {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--fg);
+    line-height: 1.55;
+  }
+
+  /* Certifications */
+  .cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cert-item {
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+  }
+
+  .cert-name {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--fg-strong);
+  }
+
+  .cert-org {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-faint);
+  }
+
+  /* Links */
+  .links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .about-link {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .about-link:hover {
+    color: var(--cyan);
+  }
+
+  .link-arrow {
+    color: var(--yellow);
+    text-decoration: none;
+    margin-right: 4px;
+  }
+
+  /* Back link — same as blog post */
+  .back-link {
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+
+  .back-link a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  .back-link a:hover {
+    color: var(--blue);
+  }
+</style>
