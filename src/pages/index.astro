@@ -1,43 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostItem from '../components/PostItem.astro';
+import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
+const allPosts = await getCollection('blog');
+const publishedPosts = allPosts
+  .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout title="saminprogress">
-  <section class="post-list">
-    <div class="section-label">
-      <span class="label-prefix">$ ls </span><span class="label-path">posts/</span>
-    </div>
-    {posts.map((post) => (
-      <PostItem
-        title={post.data.title}
-        date={post.data.date}
-        description={post.data.description}
-        tags={post.data.tags}
-        slug={post.id}
-      />
-    ))}
-  </section>
+  <Header />
+  <main>
+    <section class="hero">
+      <h1>Hello, I'm Sam.</h1>
+      <p>This is my personal blog where I write about lead dev life, building side projects, and figuring things out in public.</p>
+    </section>
+
+    <section class="latest-posts">
+      <h2>Latest Posts</h2>
+      <ul class="post-list">
+        {publishedPosts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}`}>
+              <h3>{post.data.title}</h3>
+              <p class="post-description">{post.data.description}</p>
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
 </BaseLayout>
-
-<style>
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 1.25rem;
-  }
-
-  .label-prefix {
-    color: var(--green);
-  }
-
-  .label-path {
-    color: var(--fg-faint);
-  }
-</style>
