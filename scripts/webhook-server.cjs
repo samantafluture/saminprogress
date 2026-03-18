@@ -50,7 +50,7 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Deploy started');
 
-  execFile('bash', ['-c', `cd ${PROJECT_DIR} && git fetch origin main && git reset --hard origin/main && bash scripts/deploy-vps.sh`], {
+  execFile('bash', ['-c', `cd ${PROJECT_DIR} && git fetch origin main && git reset --hard origin/main && git clean -fd && bash scripts/deploy-vps.sh`], {
     env: { ...process.env, PATH: `${process.env.HOME}/.volta/bin:${process.env.PATH}` },
     timeout: 120_000,
   }, (error, stdout, stderr) => {
