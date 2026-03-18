@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+interface Project {
+  name: string;
+  slug: string;
+  oneLiner: string;
+  url?: string;
+  repo?: string;
+  stack: string[];
+  ai: string;
+  highlights: string[];
+  status: string;
+}
+
+const projects: Project[] = [
+  {
+    name: 'Recordoc',
+    slug: 'recordoc',
+    oneLiner: 'Video recordings → professional docs via Gemini 2.5 Flash',
+    url: 'https://recordoc.app',
+    stack: ['React', 'Vite', 'Express', 'Drizzle', 'PostgreSQL', 'Supabase', 'Turborepo', 'Docker'],
+    ai: '17 doc templates, video-to-markdown, title suggestions, content sanitization',
+    highlights: [
+      'DB-driven job queue (SELECT FOR UPDATE SKIP LOCKED)',
+      'Resumable uploads with Tus.js',
+      'API envelope pattern for consistent responses',
+      'Structured logging with Pino',
+    ],
+    status: 'active',
+  },
+  {
+    name: 'Surpride',
+    slug: 'surpride',
+    oneLiner: 'Business automation for Etsy pride merch store',
+    repo: 'https://github.com/samantafluture/surpride-app',
+    stack: ['Fastify', 'SQLite', 'React', 'Tailwind', 'Docker', 'Caddy'],
+    ai: '11 Claude Code skills replace traditional app features',
+    highlights: [
+      'Real-time IMAP email parsing',
+      'Printful webhook integration',
+      'Integer-cents financial system',
+      '"Data infra in app, intelligence in Claude Code" philosophy',
+    ],
+    status: 'active',
+  },
+  {
+    name: 'FinCherry',
+    slug: 'fincherry',
+    oneLiner: 'Personal finance dashboard, multi-currency (CAD/BRL/EUR)',
+    stack: ['React', 'Vite', 'Fastify', 'tRPC', 'Drizzle', 'PostgreSQL', 'Docker'],
+    ai: 'Gemini with PII stripping, auto-categorization, what-if scenarios, cached responses',
+    highlights: [
+      '6 bank PDF parsers',
+      'Type-safe tRPC end-to-end',
+      'Role-based auth',
+      'Lazy-load charts for performance',
+    ],
+    status: 'active',
+  },
+  {
+    name: 'CherryAgent',
+    slug: 'cherryagent',
+    oneLiner: 'Self-hosted AI automation platform via Telegram, $10/month VPS',
+    stack: ['Fastify', 'PostgreSQL', 'Redis', 'BullMQ', 'pnpm monorepo', 'Docker'],
+    ai: 'Tiered model routing (free → cheap → smart → premium), <$5/month AI spend',
+    highlights: [
+      'Agent loop architecture',
+      'Voice coding → GitHub PRs',
+      'Distributed task sync',
+      'Food logger → Fitbit integration',
+    ],
+    status: 'active',
+  },
+];
+
+interface Theme {
+  title: string;
+  description: string;
+}
+
+const themes: Theme[] = [
+  {
+    title: 'AI-first development',
+    description: 'Every project leverages AI differently — from doc generation to business automation to personal finance insights',
+  },
+  {
+    title: 'Claude Code workflows',
+    description: 'Custom skills pipeline, skills replacing traditional features, voice coding to GitHub PRs',
+  },
+  {
+    title: 'Self-hosted everything',
+    description: 'Budget VPS, Docker Compose, no managed services — full control at minimal cost',
+  },
+  {
+    title: 'Monorepo patterns',
+    description: 'Turborepo, pnpm workspaces across all projects — shared tooling, independent deploys',
+  },
+  {
+    title: 'Production-grade',
+    description: 'Job queues, webhooks, retry logic, structured logging, idempotency — not just side projects',
+  },
+];
+---
+
+<BaseLayout title="projects -- saminprogress">
+  <section class="project-list">
+    <div class="section-label">
+      <span class="label-prefix">$ ls </span><span class="label-path">~/projects/</span>
+    </div>
+    {projects.map((project) => (
+      <ProjectCard
+        name={project.name}
+        oneLiner={project.oneLiner}
+        url={project.url}
+        repo={project.repo}
+        stack={project.stack}
+        ai={project.ai}
+        highlights={project.highlights}
+        status={project.status}
+      />
+    ))}
+  </section>
+
+  <section class="ai-section">
+    <div class="section-label">
+      <span class="label-prefix">$ cat </span><span class="label-path">README.md | grep "patterns"</span>
+    </div>
+    <div class="themes-list">
+      {themes.map((theme) => (
+        <div class="theme-item">
+          <h3 class="theme-title">
+            <span class="theme-prefix" aria-hidden="true">&gt; </span>{theme.title}
+          </h3>
+          <p class="theme-desc">{theme.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-prefix {
+    color: var(--green);
+  }
+
+  .label-path {
+    color: var(--fg-faint);
+  }
+
+  .ai-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .themes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .theme-item {
+    padding-left: 0;
+  }
+
+  .theme-title {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--fg-strong);
+    margin-bottom: 4px;
+  }
+
+  .theme-prefix {
+    color: var(--yellow);
+  }
+
+  .theme-desc {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--fg);
+    line-height: 1.55;
+    border-left: 2px solid var(--border);
+    padding-left: 12px;
+  }
+</style>
