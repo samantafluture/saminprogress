@@ -5,15 +5,20 @@ interface Props {
   description: string;
   tags?: string[];
   slug: string;
+  substack?: string;
 }
 
-const { title, date, description, tags = [], slug } = Astro.props;
+const { title, date, description, tags = [], slug, substack } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
 });
+
+const titleHref = substack || `/blog/${slug}/`;
+const titleTarget = substack ? '_blank' : undefined;
+const titleRel = substack ? 'noopener noreferrer' : undefined;
 ---
 
 <article class="post-item">
@@ -22,9 +27,10 @@ const formattedDate = date.toLocaleDateString('en-US', {
     <time datetime={date.toISOString()}>{formattedDate}</time>
   </div>
   <h3 class="post-title">
-    <a href={`/blog/${slug}/`}>
+    <a href={titleHref} target={titleTarget} rel={titleRel}>
       <span class="title-prefix" aria-hidden="true">&gt; </span>{title}
     </a>
+    {substack && <span class="lock-badge">[substack]</span>}
   </h3>
   {tags.length > 0 && (
     <div class="post-tags">
@@ -36,7 +42,15 @@ const formattedDate = date.toLocaleDateString('en-US', {
   {description && (
     <p class="post-excerpt">{description}</p>
   )}
-  <a href={`/blog/${slug}/`} class="read-more" aria-label={`read more: ${title}`}><span aria-hidden="true">&rarr; </span>read more</a>
+  {substack ? (
+    <a href={substack} class="read-more read-more--substack" target="_blank" rel="noopener noreferrer" aria-label={`read on substack: ${title}`}>
+      <span aria-hidden="true">&rarr; </span>read on substack
+    </a>
+  ) : (
+    <a href={`/blog/${slug}/`} class="read-more" aria-label={`read more: ${title}`}>
+      <span aria-hidden="true">&rarr; </span>read more
+    </a>
+  )}
 </article>
 
 <style>
@@ -81,6 +95,14 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
   .title-prefix {
     color: var(--yellow);
+  }
+
+  .lock-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--orange);
+    margin-left: 8px;
+    vertical-align: middle;
   }
 
   .post-tags {
@@ -129,6 +151,16 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .read-more:hover {
+    background: var(--blue);
+    color: var(--bg);
+  }
+
+  .read-more--substack {
+    background: var(--orange);
+    color: var(--bg);
+  }
+
+  .read-more--substack:hover {
     background: var(--blue);
     color: var(--bg);
   }

@@ -31,6 +31,9 @@ If Sam says "let's write a post" and `src/drafts/ideas.md` has entries, offer: "
 
 Understand what Sam wants to write about. Let her ramble. This is the brainstorm.
 
+Early in the conversation, ask: **"Is this one for Substack (paid/exclusive) or the free blog?"**
+If Substack, you'll include the `substack` field in the frontmatter at save time.
+
 Ask open-ended questions like:
 - "What's on your mind? What happened or what are you thinking about?"
 - "What made this stick with you?"
@@ -90,8 +93,11 @@ date: YYYY-MM-DD
 tags: ["tag1", "tag2"]
 description: "One-line description"
 status: draft
+substack: "https://samantafluture.substack.com/p/slug"  # only if Substack post
 ---
 ```
+
+If this is a Substack post, include the `substack` field with the expected URL (Sam can update the slug later once published on Substack). If it's a free blog post, omit the field entirely.
 
 After writing, ask:
 - "How does this feel? Anything that doesn't sound like you?"

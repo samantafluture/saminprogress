@@ -63,8 +63,11 @@ description: "One-line description"
 date: 2026-03-13
 tags: ["dev", "life"]
 draft: false
+substack: "https://samantafluture.substack.com/p/slug"  # optional — locks post, links to Substack
 ---
 ```
+
+Posts with a `substack` URL appear in listings but link to Substack instead of generating a local page.
 
 Drafts in `src/drafts/` use the same format plus a `status` field:
 

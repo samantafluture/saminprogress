@@ -62,6 +62,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
+    <!-- subscribe -->
+    <section class="home-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>subscribe
+      </h2>
+      <div class="home-prose">
+        <p>
+          Some posts live exclusively on Substack. If you want the full picture,
+          dev stories, deep dives, and the stuff I only share with subscribers,
+          that's where to find it.
+        </p>
+      </div>
+      <a href="https://samantafluture.substack.com/" class="subscribe-cta" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">&rarr; </span>subscribe on substack<span class="sr-only"> (opens in new tab)</span>
+      </a>
+    </section>
+
     <!-- links -->
     <section class="home-section">
       <h2 class="section-heading">
@@ -207,6 +224,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 14px;
     color: var(--fg);
     line-height: 1.55;
+  }
+
+  /* Subscribe CTA */
+  .subscribe-cta {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--orange);
+    color: var(--bg);
+    padding: 5px 16px;
+    border: none;
+    border-radius: 0;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+
+  .subscribe-cta:hover {
+    background: var(--blue);
+    color: var(--bg);
   }
 
   /* Links */
