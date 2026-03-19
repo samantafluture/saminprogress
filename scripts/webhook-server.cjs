@@ -6,19 +6,13 @@ const http = require('node:http');
 const { execFile } = require('node:child_process');
 const path = require('node:path');
 
-const fs = require('node:fs');
-
-const SOCKET_PATH = process.env.WEBHOOK_SOCKET || '/tmp/saminprogress-webhook.sock';
+const PORT = parseInt(process.env.WEBHOOK_PORT, 10) || 9000;
+const HOST = '127.0.0.1';
 const SECRET = process.env.WEBHOOK_SECRET;
 
 if (!SECRET) {
   console.error('WEBHOOK_SECRET environment variable is required');
   process.exit(1);
-}
-
-// Clean up stale socket
-if (fs.existsSync(SOCKET_PATH)) {
-  fs.unlinkSync(SOCKET_PATH);
 }
 
 const PROJECT_DIR = path.resolve(__dirname, '..');
@@ -65,8 +59,6 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(SOCKET_PATH, () => {
-  // Make socket readable by nginx (Docker runs as root)
-  fs.chmodSync(SOCKET_PATH, 0o777);
-  console.log(`Webhook server listening on ${SOCKET_PATH}`);
+server.listen(PORT, HOST, () => {
+  console.log(`Webhook server listening on ${HOST}:${PORT}`);
 });

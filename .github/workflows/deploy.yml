@@ -34,6 +34,8 @@ jobs:
           status=$(curl -s -o /dev/null -w "%{http_code}" \
             --connect-timeout 10 \
             --max-time 30 \
+            --retry 2 \
+            --retry-delay 3 \
             -X POST \
             -H "X-Webhook-Secret: ${{ secrets.WEBHOOK_SECRET }}" \
             https://blog.samantafluture.com/webhook/deploy)
