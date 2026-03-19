@@ -1,17 +1,19 @@
 # Project: saminprogress
 
-> Last synced to repo: 2026-03-19T11:15:01+00:00
+> Last synced to repo: 2026-03-20T16:45:01+00:00
 > Last agent update: 2026-03-14
 
 ## Active Sprint
 
 ### P0 — Must do now
 All P0 tasks completed.
-- [ ] Create feat to lock posts from writing that I want under pay wall like Substack
+- [ ] Plan a separation between samantafluture professional site and the saminprogress blog ⏳ wip
 
 ### P1 — Should do this week
 
 ### P2 — Nice to have
+- [ ] Connect analytics tool to the site
+- [ ] Check ahrefs skills for content blog posts because I could apply this to my sites
 
 ## Blocked
 - [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
@@ -23,9 +25,9 @@ All P0 tasks completed.
   - [ ] Update `astro.config.mjs` site URL
   > Domain registered 2026-03-14. Registry delegation can take 12-48h. Retry Certbot when ready.
   > Traffic already reaches VPS (redirects to blog.samantafluture.com on HTTP).
-- [ ] Make sure all Sam's domains go to same place now
 
 ## Completed (recent)
+- [x] Create feat to lock posts from writing that I want under pay wall like Substack ✅ 2026-03-19
 - [x] Create a home with a summary on myself and the site plus contact info ✅ 2026-03-18
 - [x] Create projects page with github content ✅ 2026-03-18
 - [x] Create about page with linkedin content ✅ 2026-03-16
