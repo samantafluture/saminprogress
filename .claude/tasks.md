@@ -1,19 +1,29 @@
 # Project: saminprogress
 
 > Last synced to repo: 2026-03-20T16:45:01+00:00
-> Last agent update: 2026-03-14
+> Last agent update: 2026-03-20
 
 ## Active Sprint
 
 ### P0 — Must do now
-All P0 tasks completed.
-- [ ] Plan a separation between samantafluture professional site and the saminprogress blog ⏳ wip
+- [ ] Remove samantafluture references from blog `[M]` #separation
+  - [ ] Audit and update all source files (pages, components, layouts)
+  - [ ] Update deploy scripts and CI workflow
+  - [ ] Update CLAUDE.md and documentation
+  > Zero visible connection between samantafluture.com and saminprogress
 
 ### P1 — Should do this week
+- [ ] Update Nginx config for saminprogress.tech `[S]` #devops
+  - [ ] Add `server_name saminprogress.tech www.saminprogress.tech`
+  - [ ] Keep `blog.samantafluture.com` temporarily
+- [ ] Update `astro.config.mjs` site URL to saminprogress.tech `[S]` #devops
 
 ### P2 — Nice to have
 - [ ] Connect analytics tool to the site
 - [ ] Check ahrefs skills for content blog posts because I could apply this to my sites
+- [ ] Sunset blog.samantafluture.com (2-4 weeks after saminprogress.tech stable) `[S]` #devops
+  - [ ] Set up 301 redirect from blog.samantafluture.com → saminprogress.tech
+  - [ ] Eventually remove old server block
 
 ## Blocked
 - [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
@@ -21,12 +31,12 @@ All P0 tasks completed.
   - [x] CNAME `www` → saminprogress.tech added
   - [x] Hostinger nameservers respond correctly (ns1/ns2.dns-parking.com)
   - [ ] Certbot SSL certificate — blocked, .tech registry hasn't delegated NS to Hostinger yet
-  - [ ] Update Nginx config with HTTPS for new domain
-  - [ ] Update `astro.config.mjs` site URL
   > Domain registered 2026-03-14. Registry delegation can take 12-48h. Retry Certbot when ready.
   > Traffic already reaches VPS (redirects to blog.samantafluture.com on HTTP).
 
 ## Completed (recent)
+- [x] Plan separation between samantafluture.com and saminprogress blog ✅ 2026-03-19
+  > Agent: plan finalized, samantafluture-site repo scaffolded, design directions written
 - [x] Create feat to lock posts from writing that I want under pay wall like Substack ✅ 2026-03-19
 - [x] Create a home with a summary on myself and the site plus contact info ✅ 2026-03-18
 - [x] Create projects page with github content ✅ 2026-03-18
