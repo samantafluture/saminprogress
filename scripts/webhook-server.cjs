@@ -3,11 +3,13 @@
 // Listens for POST /deploy with a secret token, then runs deploy-vps.sh
 
 const http = require('node:http');
+const fs = require('node:fs');
 const { execFile } = require('node:child_process');
 const path = require('node:path');
 
 const PORT = parseInt(process.env.WEBHOOK_PORT, 10) || 9000;
-const HOST = '127.0.0.1';
+const HOST = '0.0.0.0';
+const SOCKET_PATH = '/tmp/saminprogress-webhook.sock';
 const SECRET = process.env.WEBHOOK_SECRET;
 
 if (!SECRET) {
@@ -61,4 +63,12 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log(`Webhook server listening on ${HOST}:${PORT}`);
+});
+
+// Also listen on Unix socket for Docker-to-host communication
+const socketServer = http.createServer(server.listeners('request')[0]);
+try { fs.unlinkSync(SOCKET_PATH); } catch {}
+socketServer.listen(SOCKET_PATH, () => {
+  fs.chmodSync(SOCKET_PATH, 0o777);
+  console.log(`Webhook server also listening on ${SOCKET_PATH}`);
 });
