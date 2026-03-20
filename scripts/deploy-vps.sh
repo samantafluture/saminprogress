@@ -18,4 +18,4 @@ docker run --rm \
   -v "$(pwd)/dist":/src:ro \
   alpine sh -c 'rm -rf /data/* && cp -r /src/* /data/'
 
-echo "Deploy complete! https://blog.samantafluture.com"
+echo "Deploy complete! https://saminprogress.tech"

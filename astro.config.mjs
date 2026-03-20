@@ -3,6 +3,6 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://blog.samantafluture.com',
+  site: 'https://saminprogress.tech',
   integrations: [mdx(), sitemap()],
 });

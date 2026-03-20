@@ -51,5 +51,5 @@ docker exec infra-nginx nginx -s reload 2>/dev/null || echo "Warning: Could not 
 
 echo ""
 echo "=== Setup complete ==="
-echo "Test with: curl -X POST -H 'X-Webhook-Secret: YOUR_SECRET' https://blog.samantafluture.com/webhook/deploy"
+echo "Test with: curl -X POST -H 'X-Webhook-Secret: YOUR_SECRET' https://saminprogress.tech/webhook/deploy"
 echo "Check logs: journalctl -u saminprogress-webhook -f"

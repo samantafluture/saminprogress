@@ -43,7 +43,7 @@ ssh sam@187.124.67.117 "docker run --rm -v saminprogress_web:/data -v /tmp/samin
 ## Step 4: Verify
 
 ```bash
-curl -sI https://blog.samantafluture.com | head -5
+curl -sI https://saminprogress.tech | head -5
 ```
 
 Report the HTTP status code to confirm success.

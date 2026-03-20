@@ -15,4 +15,4 @@ rsync -avz --delete dist/ "$VPS":/tmp/saminprogress-dist/
 echo "Copying into Docker volume..."
 ssh "$VPS" "docker run --rm -v saminprogress_web:/data -v /tmp/saminprogress-dist:/src:ro alpine sh -c 'rm -rf /data/* && cp -r /src/* /data/' && rm -rf /tmp/saminprogress-dist"
 
-echo "Deploy complete! https://blog.samantafluture.com"
+echo "Deploy complete! https://saminprogress.tech"
