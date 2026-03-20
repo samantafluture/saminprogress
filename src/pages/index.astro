@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PostItem from '../components/PostItem.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout title="saminprogress">
@@ -35,6 +41,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
+    <!-- writing -->
+    <section class="home-section">
+      <h2 class="section-heading">
+        <span class="heading-prefix" aria-hidden="true">## </span>writing
+      </h2>
+      <div class="post-list">
+        {posts.map((post) => (
+          <PostItem
+            title={post.data.title}
+            date={post.data.date}
+            description={post.data.description}
+            tags={post.data.tags}
+            slug={post.id}
+            substack={post.data.substack}
+          />
+        ))}
+      </div>
+    </section>
+
     <!-- subscribe -->
     <section class="home-section">
       <h2 class="section-heading">
@@ -48,7 +73,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
       <a href="https://samantafluture.substack.com/" class="subscribe-cta" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">&rarr; </span>subscribe on substack<span class="sr-only"> (opens in new tab)</span>
+        <span aria-hidden="true">&rarr; </span>subscribe on substack
       </a>
     </section>
 
