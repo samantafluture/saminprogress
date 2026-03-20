@@ -1,40 +1,33 @@
 # Project: saminprogress
 
-> Last synced to repo: 2026-03-20T16:45:01+00:00
+> Last synced to repo: 2026-03-20T23:35:01+00:00
 > Last agent update: 2026-03-20
 
 ## Active Sprint
 
 ### P0 — Must do now
-- [ ] Remove samantafluture references from blog `[M]` #separation
-  - [ ] Audit and update all source files (pages, components, layouts)
-  - [ ] Update deploy scripts and CI workflow
-  - [ ] Update CLAUDE.md and documentation
-  > Zero visible connection between samantafluture.com and saminprogress
 
 ### P1 — Should do this week
-- [ ] Update Nginx config for saminprogress.tech `[S]` #devops
-  - [ ] Add `server_name saminprogress.tech www.saminprogress.tech`
-  - [ ] Keep `blog.samantafluture.com` temporarily
-- [ ] Update `astro.config.mjs` site URL to saminprogress.tech `[S]` #devops
 
 ### P2 — Nice to have
-- [ ] Connect analytics tool to the site
-- [ ] Check ahrefs skills for content blog posts because I could apply this to my sites
 - [ ] Sunset blog.samantafluture.com (2-4 weeks after saminprogress.tech stable) `[S]` #devops
   - [ ] Set up 301 redirect from blog.samantafluture.com → saminprogress.tech
   - [ ] Eventually remove old server block
 
 ## Blocked
-- [ ] Finalize `saminprogress.tech` domain setup `[S]` #devops 🔴 blocked: .tech TLD NS delegation not complete yet
-  - [x] DNS A record added (`@` → 187.124.67.117)
-  - [x] CNAME `www` → saminprogress.tech added
-  - [x] Hostinger nameservers respond correctly (ns1/ns2.dns-parking.com)
-  - [ ] Certbot SSL certificate — blocked, .tech registry hasn't delegated NS to Hostinger yet
-  > Domain registered 2026-03-14. Registry delegation can take 12-48h. Retry Certbot when ready.
-  > Traffic already reaches VPS (redirects to blog.samantafluture.com on HTTP).
 
 ## Completed (recent)
+- [x] Check ahrefs skills for content blog posts because I could apply this to my sites ✅ 2026-03-20
+- [x] Connect analytics tool to the site ✅ 2026-03-20
+- [x] Update `astro.config.mjs` site URL to saminprogress.tech `[S]` #devops ✅ 2026-03-20
+- [x] Update Nginx config for saminprogress.tech `[S]` #devops ✅ 2026-03-20
+  - [ ] Add `server_name saminprogress.tech www.saminprogress.tech`
+  - [ ] Keep `blog.samantafluture.com` temporarily
+- [x] Remove samantafluture references from blog `[M]` #separation ✅ 2026-03-20
+  - [ ] Audit and update all source files (pages, components, layouts)
+  - [ ] Update deploy scripts and CI workflow
+  - [ ] Update CLAUDE.md and documentation
+  > Zero visible connection between samantafluture.com and saminprogress
 - [x] Plan separation between samantafluture.com and saminprogress blog ✅ 2026-03-19
   > Agent: plan finalized, samantafluture-site repo scaffolded, design directions written
 - [x] Create feat to lock posts from writing that I want under pay wall like Substack ✅ 2026-03-19
