@@ -27,7 +27,7 @@ Zero copy-paste. One tool. One session if you want.
 ## Blog Identity
 
 **Blog:** saminprogress
-**URL:** blog.samantafluture.com (moving to saminprogress.dev)
+**URL:** saminprogress.tech
 **Stack:** Astro + TypeScript + pnpm
 **Aesthetic:** 2000s CRT (phosphor green/amber, monospace headings)
 **Tagline:** personal journal · lead dev life · things i'm building

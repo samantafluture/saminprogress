@@ -2,7 +2,7 @@
 
 Personal blog by Sam. Built with Astro, deployed on Nginx.
 
-**URL:** blog.samantafluture.com (future: saminprogress.dev)
+**URL:** saminprogress.tech
 
 ## Dev
 

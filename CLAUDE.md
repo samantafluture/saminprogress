@@ -29,8 +29,7 @@ No runtime. No database. No backend. Nginx serves the built `dist/` directory.
 
 ## 3. URLs
 
-- **Primary:** `saminprogress.tech`
-- **Legacy (redirects):** `blog.samantafluture.com` → `saminprogress.tech`
+- **Production:** `saminprogress.tech`
 
 ---
 

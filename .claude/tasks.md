@@ -10,24 +10,30 @@
 ### P1 — Should do this week
 
 ### P2 — Nice to have
-- [ ] Sunset blog.samantafluture.com (2-4 weeks after saminprogress.tech stable) `[S]` #devops
-  - [ ] Set up 301 redirect from blog.samantafluture.com → saminprogress.tech
-  - [ ] Eventually remove old server block
+- [ ] Eventually remove blog.samantafluture.com server block + cert from nginx `[S]` #devops
+  > Keep 301 redirect running for 2-3 months, then clean up
 
 ## Blocked
 
 ## Completed (recent)
-- [x] Check ahrefs skills for content blog posts because I could apply this to my sites ✅ 2026-03-20
+- [x] Remove samantafluture references from blog `[M]` #separation 2026-03-20
+  - [x] CLAUDE.md: removed legacy blog.samantafluture.com URL, now just saminprogress.tech
+  - [x] README.md: updated URL to saminprogress.tech
+  - [x] blog-workflow.md: updated URL to saminprogress.tech
+  - [x] Source files: no samantafluture.com links (Substack URL is user's account, stays)
+  - [x] Deploy scripts: GitHub org URL is correct (samantafluture/saminprogress), stays
+  - [x] astro.config.mjs: already set to saminprogress.tech
+  > Agent: audited all files. Remaining samantafluture refs are external accounts (Substack, GitHub, social handles) — not site cross-links
+- [x] Check ahrefs skills for content blog posts ✅ 2026-03-20
 - [x] Connect analytics tool to the site ✅ 2026-03-20
-- [x] Update `astro.config.mjs` site URL to saminprogress.tech `[S]` #devops ✅ 2026-03-20
-- [x] Update Nginx config for saminprogress.tech `[S]` #devops ✅ 2026-03-20
-  - [ ] Add `server_name saminprogress.tech www.saminprogress.tech`
-  - [ ] Keep `blog.samantafluture.com` temporarily
-- [x] Remove samantafluture references from blog `[M]` #separation ✅ 2026-03-20
-  - [ ] Audit and update all source files (pages, components, layouts)
-  - [ ] Update deploy scripts and CI workflow
-  - [ ] Update CLAUDE.md and documentation
-  > Zero visible connection between samantafluture.com and saminprogress
+- [x] Sunset blog.samantafluture.com `[S]` #devops 2026-03-20
+  - [x] 301 redirect from blog.samantafluture.com → saminprogress.tech already live
+  - [x] saminprogress.tech stable, SSL active
+  > Agent: redirect confirmed in nginx config; cleanup of old server block deferred 2-3 months
+- [x] Finalize saminprogress.tech domain setup `[S]` #devops 2026-03-20
+  - [x] DNS, SSL, nginx all working
+- [x] Update Nginx config for saminprogress.tech `[S]` #devops 2026-03-20
+- [x] Update astro.config.mjs site URL to saminprogress.tech `[S]` #devops 2026-03-20
 - [x] Plan separation between samantafluture.com and saminprogress blog ✅ 2026-03-19
   > Agent: plan finalized, samantafluture-site repo scaffolded, design directions written
 - [x] Create feat to lock posts from writing that I want under pay wall like Substack ✅ 2026-03-19
